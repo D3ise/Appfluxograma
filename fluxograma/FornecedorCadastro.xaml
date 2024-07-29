@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="fluxograma.FornecedorCadastro"
+             Title="Cadastro de Cliente">
+
+    <ContentPage.Content>
+        <StackLayout Padding="10">
+
+            <!-- Header with a back arrow and title -->
+            <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                <Image Source="back_arrow.png" VerticalOptions="Center" />
+                <Label Text="CADASTRO DE CLIENTE" FontSize="20" VerticalOptions="Center" />
+            </StackLayout>
+
+            <!-- Profile icon -->
+            <Image Source="user_icon.png" WidthRequest="100" HeightRequest="100" HorizontalOptions="Center" Margin="20"/>
+
+            <!-- User input fields -->
+            <StackLayout>
+                <Label Text="Nome do usuário:" />
+                <Entry Placeholder="Nome do usuário" />
+
+                <Label Text="Telefone:" />
+                <Entry Placeholder="Telefone" Keyboard="Telephone" />
+
+                <Label Text="Endereço:" />
+                <Entry Placeholder="Endereço" />
+
+                <Label Text="Email" />
+                <Entry Placeholder="Email" Keyboard="Email" />
+            </StackLayout>
+
+            <!-- Save button -->
+            <Button Text="SALVAR"
+                    HorizontalOptions="Center"
+                    Margin="20" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="fluxograma.Fornecedor"
+              Shell.NavBarIsVisible="False"
+             Title="Fornecedor">
+
+             <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="60" />
+            <RowDefinition Height="60" />
+            <RowDefinition Height="60" />
+        </Grid.RowDefinitions>
+         <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="150" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+            <Image Source="back.png"
+                   Grid.Row= "0" 
+                   Grid.Column="0"
+                   VerticalOptions= "Start"
+                   WidthRequest="20"
+                   HeightRequest="20" />
+            <Label Text="FORNECEDORES"
+                   Grid.Row= "0" 
+                   Grid.Column="1"
+                   Grid.ColumnSpan="4"
+                   FontSize="20" />
+     
+            <SearchBar Placeholder="Nome do cliente"
+                     Grid.Row= "1" 
+                     Grid.ColumnSpan="3"
+                     HorizontalOptions="FillAndExpand" />
+            <Button Text="+"
+                     Grid.Row= "1" 
+                     Grid.Column="3"
+                     FontSize="20"
+                     WidthRequest="40"
+                     HeightRequest="40" />
+     
+            <Image Source="user.png"
+                   Grid.Row= "2" 
+                   Grid.Column="0"
+                   WidthRequest="50"
+                   HeightRequest="50" />
+            <Label Text="Nome do cliente"
+                   Grid.Row= "2" 
+                   Grid.Column="1"
+                   VerticalOptions="Center"
+                   HorizontalOptions="StartAndExpand" />
+            <ImageButton Source="edit.png"
+                         Grid.Row= "2" 
+                         Grid.Column="2"
+                         Clicked= "Button_Clicked"
+                         WidthRequest="10"
+                         HeightRequest="10" />
+            <ImageButton Source="delete.png"
+                         Grid.Row= "2" 
+                         Grid.Column="3"
+                         WidthRequest="10"
+                         HeightRequest="20" />
+
+         <Image Source="user.png"
+                   Grid.Row= "3" 
+                   Grid.Column="0"
+                   WidthRequest="50"
+                   HeightRequest="50" />
+            <Label Text="Nome do cliente"
+                   Grid.Row= "3" 
+                   Grid.Column="1"
+                   VerticalOptions="Center"
+                   HorizontalOptions="StartAndExpand" />
+            <ImageButton Source="edit.png"
+                         Grid.Row= "3" 
+                         Grid.Column="2"
+                         Clicked="Button_Clicked"
+                         WidthRequest="10"
+                         HeightRequest="10" />
+            <ImageButton Source="delete.png"
+                         Grid.Row= "3" 
+                         Grid.Column="3"
+                         WidthRequest="10"
+                         HeightRequest="20" />
+
+
+    </Grid>
+</ContentPage>

@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Fluxograma.TelaInicial"
+             Title="Tela Principal">
+
+    <ContentPage.Content>
+        <StackLayout Padding="10">
+
+            <Label Text="TELA PRINCIPAL"
+                   FontSize="24"
+                   HorizontalOptions="Center"
+                   Margin="0,10,0,10"/>
+
+            <!-- Grid with buttons -->
+            <Grid RowSpacing="10"
+                    ColumnSpacing="10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="100"/>
+                    <RowDefinition Height="100"/>
+                    <RowDefinition Height="100"/>
+                    <RowDefinition Height="100"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <!-- First row -->
+                <Button Grid.Row="0"
+                    Grid.Column="0"
+                    Text="CLIENTES"
+                    BackgroundColor="#ADD8E6"
+                    TextColor="Black">
+                </Button>
+                <Image Source= "pessoas.webp"
+                    Grid.Row="0"
+                   Grid.Column="0"/>
+
+                <Button Grid.Row="0"
+                        Grid.Column="1"
+                        Text="FORNECEDORES"
+                        BackgroundColor="#FFB6C1"
+                        TextColor="Black">
+                    <Button.ImageSource>
+                        <FontImageSource Glyph="&#xf290;"
+                                FontFamily="FontAwesome"/>
+                    </Button.ImageSource>
+                </Button>
+
+                <!-- Second row -->
+                <Button Grid.Row="1"
+                        Grid.Column="0"
+                        Text="TRANSPORTADORAS"
+                        BackgroundColor="#FFFF99"
+                        TextColor="Black">
+                    <Button.ImageSource>
+                        <FontImageSource Glyph="&#xf207;"
+                                FontFamily="FontAwesome"/>
+                    </Button.ImageSource>
+                </Button>
+                <Button Grid.Row="1"
+                        Grid.Column="1"
+                        Text="PRODUTOS"
+                        BackgroundColor="#98FB98"
+                        TextColor="Black">
+                    <Button.ImageSource>
+                        <FontImageSource Glyph="&#xf291;"
+                                FontFamily="FontAwesome"/>
+                    </Button.ImageSource>
+                </Button>
+
+                <!-- Third row -->
+                <Button Grid.Row="2"
+                        Grid.Column="0"
+                        Text="MATÉRIA PRIMA"
+                        BackgroundColor="#DDA0DD"
+                        TextColor="Black">
+                    <Button.ImageSource>
+                        <FontImageSource Glyph="&#xf275;"
+                                FontFamily="FontAwesome"/>
+                    </Button.ImageSource>
+                </Button>
+                <Button Grid.Row="2"
+                        Grid.Column="1"
+                        Text="PEDIDOS"
+                        BackgroundColor="#FFA07A"
+                        TextColor="Black">
+                    <Button.ImageSource>
+                        <FontImageSource Glyph="&#xf290;"
+                                FontFamily="FontAwesome"/>
+                    </Button.ImageSource>
+                </Button>
+
+                <!-- Fourth row -->
+                <Button Grid.Row="3"
+                        Grid.Column="0"
+                        Text="ESTOQUE"
+                        BackgroundColor="#96D1C1"
+                        TextColor="Black">
+                    <Button.ImageSource>
+                        <FontImageSource Glyph="&#xf1b2;"
+                                FontFamily="FontAwesome"/>
+                    </Button.ImageSource>
+                </Button>
+                <Button Grid.Row="3"
+                        Grid.Column="1"
+                        Text="FUNCIONÁRIOS"
+                        BackgroundColor="#D3D3D3"
+                        TextColor="Black">
+                    <Button.ImageSource>
+                        <FontImageSource Glyph="&#xf0c0;"
+                                FontFamily="FontAwesome"/>
+                    </Button.ImageSource>
+                </Button>
+            </Grid>
+
+            <!-- Floating Action Button -->
+            <Button Text="+"
+                    FontSize="24"
+                    CornerRadius="30"
+                    WidthRequest="60"
+                    HeightRequest="60"
+                    HorizontalOptions="End"
+                    VerticalOptions="End"
+                    Margin="0,20,10,10"
+                    BackgroundColor="Pink"
+                    TextColor="Black">
+            </Button>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
