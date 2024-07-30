@@ -1,30 +1,47 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8"?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Fluxograma.Cliente"
+             Shell.NavBarIsVisible="False"
              Title="Clientes">
     <StackLayout Padding="10">
         <!-- Header with a back arrow and title -->
-        <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
-            <Image Source="back_arrow.png" VerticalOptions="Center" />
-            <Label Text="CLIENTES" FontSize="20" VerticalOptions="Center" />
+        <StackLayout Orientation="Horizontal"
+                     HorizontalOptions="CenterAndExpand">
+            <Image Source="back_arrow.png"
+                   VerticalOptions="Center" />
+            <Label Text="CLIENTES"
+                   FontSize="20"
+                   VerticalOptions="Center" />
         </StackLayout>
-
         <!-- Search bar and add button -->
-        <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Margin="0,10,0,10">
-            <SearchBar Placeholder="Nome do cliente" HorizontalOptions="FillAndExpand" />
-            <Button Text="+" FontSize="20" WidthRequest="40" />
+        <StackLayout Orientation="Horizontal"
+                     HorizontalOptions="FillAndExpand"
+                     Margin="0,10,0,10">
+            <SearchBar Placeholder="Nome do cliente"
+                       HorizontalOptions="FillAndExpand" />
+            <Button Text="+"
+                    FontSize="20"
+                    WidthRequest="40" />
         </StackLayout>
-
         <!-- List of clients -->
         <CollectionView>
             <CollectionView.ItemTemplate>
                 <DataTemplate>
-                    <StackLayout Orientation="Horizontal" Padding="5">
-                        <Image Source="user_icon.png" WidthRequest="40" HeightRequest="40" />
-                        <Label Text="Nome do cliente" VerticalOptions="Center" HorizontalOptions="StartAndExpand" />
-                        <ImageButton Source="edit_icon.png" WidthRequest="30" HeightRequest="30" />
-                        <ImageButton Source="delete_icon.png" WidthRequest="30" HeightRequest="30" />
+                    <StackLayout Orientation="Horizontal"
+                                 Padding="5">
+                        <Image Source="user_icon.png"
+                               WidthRequest="40"
+                               HeightRequest="40" />
+                        <Label Text="Nome do cliente"
+                               VerticalOptions="Center"
+                               HorizontalOptions="StartAndExpand" />
+                        <ImageButton Source="edit_icon.png"
+                                     WidthRequest="30"
+                                     HeightRequest="30" />
+                        <ImageButton Source="delete_icon.png"
+                                     WidthRequest="30"
+                                     HeightRequest="30" />
                     </StackLayout>
                 </DataTemplate>
             </CollectionView.ItemTemplate>

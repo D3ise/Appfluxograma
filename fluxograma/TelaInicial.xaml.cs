@@ -1,4 +1,4 @@
-namespace Fluxograma
+namespace fluxograma
 {
     public partial class TelaInicial : ContentPage
     {

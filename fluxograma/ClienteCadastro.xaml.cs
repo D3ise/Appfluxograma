@@ -1,8 +1,8 @@
 namespace Fluxograma
 {
-    public partial class CadastroCliente : ContentPage
+    public partial class ClienteCadastro : ContentPage
     {
-        public CadastroCliente()
+        public ClienteCadastro()
         {
             InitializeComponent();
         }
