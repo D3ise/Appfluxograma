@@ -11,17 +11,18 @@ namespace fluxograma
         {
             Application.Current.MainPage = new FornecedorEditar();
         }
-        void Delete(object sender, EventArgs args)
+
+        private void Volta(object sender, EventArgs e)
+        {
+            Application.Current.MainPage = new TelaInicial();
+        }
+        async void Delete(object sender, EventArgs args)
 	    {
-		    frameDelete.IsVisible = true;
-	    }
-        void Back(object sender, EventArgs args)
-	    {
-		   frameDelete.IsVisible =  false;
-	    }
-         void Volta(object sender, EventArgs args)
-	    {
-		   frameDelete.IsVisible =  false;
+		   var resp = await DisplayAlert ("APAGAR" , "Certeza que deseja apagar este usuário?" , "SIM" , "NÃO"); 
+          // if (resp == "SIM")
+           {
+
+           }
 	    }
     }
 }

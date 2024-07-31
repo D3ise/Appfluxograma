@@ -26,9 +26,10 @@
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
 
-                <Button Grid.Row="0"
+                <Button Text="CLIENTES"
+                    Grid.Row="0"
                     Grid.Column="0"
-                    Text="CLIENTES"
+                    Clicked= "Cliente"
                     BackgroundColor="#ADD8E6"
                     TextColor="Black">
                 </Button>
@@ -39,9 +40,10 @@
                     Grid.Row="0"
                    Grid.Column="0"/>
 
-                <Button Grid.Row="0"
+                <Button Text="FORNECEDORES"
+                        Grid.Row="0"
                         Grid.Column="1"
-                        Text="FORNECEDORES"
+                        Clicked= "Fornecedor"
                         BackgroundColor="#FFB6C1"
                         TextColor="Black">
                 </Button>

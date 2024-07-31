@@ -3,29 +3,56 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Fluxograma.MainPage">
 
-<Frame x:Name="frameDelete"
+ <Frame x:Name="frameDelete"
                IsVisible="False"
-               Grid.Row="5"
+               Grid.Row="4"
+               Grid.RowSpan="2"
                Grid.ColumnSpan="4"
-               BorderColor="Gray" 
-              CornerRadius="10" 
-              Padding="20"
-              Margin= "0,0,0,0">
-        <StackLayout>
-            <Label Text="DELETE THIS USER?" 
-            FontSize="18" 
-            HorizontalOptions="CenterAndExpand" />
+               BorderColor="Black"
+               BackgroundColor="White"
+               Margin= "10,0,10,0">
 
-            <StackLayout Orientation="Horizontal"
-             HorizontalOptions="CenterAndExpand">
+             <Grid>
+            <Grid.RowDefinitions>
+               <RowDefinition Height="30"/>
+               <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+               <ColumnDefinition Width="*"/>
+               <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
 
-                <Button Text="YES" 
-                BackgroundColor="Green" />
+            <Label Text= "Apagar este usuário?"
+                  Grid.Row="0"
+                  Grid.Column="0"
+                  Grid.ColumnSpan="2"
+                  TextColor="Black"
+                  FontAttributes="Bold"
+                  FontSize="20"
+                  HorizontalOptions="Center"/>
 
-                <Button Text="NO" 
-                BackgroundColor="Red" />
-            </StackLayout>
-        </StackLayout>
-    </Frame>
+            <Button Text="SIM"
+                     Grid.Row="1"
+                     Grid.Column="0"
+                     Padding="0"
+                     HeightRequest="20"
+                     WidthRequest="20"
+                     TextColor="Black"
+                     FontAttributes="Bold"
+                     FontSize="14"
+                     BackgroundColor="#04911c"/>
+
+              <Button Text="NÃO"
+                     Grid.Row="1"
+                     Grid.Column="1"
+                     Padding="0"
+                     HeightRequest="20"
+                     WidthRequest="20"
+                     TextColor="Black"
+                     FontAttributes="Bold"
+                     FontSize="14"
+                     BackgroundColor="#c90606"/>
+        </Grid>
+      </Frame>  
 
 </ContentPage>

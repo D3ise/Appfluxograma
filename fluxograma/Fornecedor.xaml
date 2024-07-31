@@ -22,12 +22,14 @@
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
 
-            <Image Source="back.png"
+            <ImageButton Source="back.png"
                    Grid.Row= "0" 
                    Grid.Column="0"
+                   Clicked= "Volta"
                    VerticalOptions= "Start"
                    WidthRequest="20"
                    HeightRequest="20" />
+                  
             <Label Text="FORNECEDORES"
                    Grid.Row= "0" 
                    Grid.Column="1"
@@ -62,61 +64,7 @@
                          WidthRequest="10"
                          HeightRequest="10" />
 
-             <Frame x:Name="frameDelete"
-               IsVisible="False"
-               Grid.Row="4"
-               Grid.RowSpan="2"
-               Grid.ColumnSpan="4"
-               BorderColor="Black"
-               BackgroundColor="White"
-               Margin= "10,0,10,0">
-
-             <Grid>
-            <Grid.RowDefinitions>
-               <RowDefinition Height="30"/>
-               <RowDefinition Height="*"/>
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-               <ColumnDefinition Width="*"/>
-               <ColumnDefinition Width="*"/>
-            </Grid.ColumnDefinitions>
-
-            <Label Text= "Apagar este usuário?"
-                  Grid.Row="0"
-                  Grid.Column="0"
-                  Grid.ColumnSpan="2"
-                  TextColor="Black"
-                  FontAttributes="Bold"
-                  FontSize="20"
-                  HorizontalOptions="Center"/>
-
-            <Button Text="SIM"
-                     Grid.Row="1"
-                     Grid.Column="0"
-                     Padding="0"
-                     HeightRequest="20"
-                     WidthRequest="20"
-                     Clicked="Volta" 
-                     TextColor="Black"
-                     FontAttributes="Bold"
-                     FontSize="14"
-                     BackgroundColor="#04911c"/>
-
-              <Button Text="NÃO"
-                     Grid.Row="1"
-                     Grid.Column="1"
-                     Padding="0"
-                     HeightRequest="20"
-                     WidthRequest="20"
-                     Clicked="Back" 
-                     TextColor="Black"
-                     FontAttributes="Bold"
-                     FontSize="14"
-                     BackgroundColor="#c90606"/>
-        </Grid>
-      </Frame>  
-
-       <ImageButton Source="delete.png"
+            <ImageButton Source="delete.png"
                          Grid.Row= "2" 
                          Grid.Column="3"
                          Clicked="Delete"
@@ -142,6 +90,7 @@
             <ImageButton Source="delete.png"
                          Grid.Row= "3" 
                          Grid.Column="3"
+                         Clicked="Delete"
                          WidthRequest="10"
                          HeightRequest="20" />
 
