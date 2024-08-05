@@ -4,72 +4,109 @@
              x:Class="fluxograma.Usuário"
              Title="Perfil">
 
-    <ScrollView>
-        <StackLayout Padding="20"
-                     VerticalOptions="Center">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="100" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
 
-            <Button Text="PERFIL"
-                    HorizontalOptions="Center" />
+             <ImageButton Source="back.png"
+                   Grid.Row= "0" 
+                   Grid.Column="0"
+                   Clicked= "Back"
+                   HorizontalOptions= "Start"
+                   WidthRequest="10"
+                   HeightRequest="5" />
 
-            <Frame CornerRadius="100"
-                   HeightRequest="100"
-                   WidthRequest="100"
-                   HorizontalOptions="Center"
-                   VerticalOptions="Center">
+            <Label Text="PERFIL"
+               HorizontalOptions="Center"
+               Grid.ColumnSpan="2"
+               Grid.Row="0" />
 
-            <Image Source="perfil.jpg"
-                       Aspect="AspectFill" />
-            </Frame>
+            <Image Source="user.png"
+               Grid.ColumnSpan="2"
+               Grid.Row="1" />
 
             <Label Text="Nome do usuário:"
-                   FontAttributes="Bold" />
+                   FontAttributes="Bold"
+                    Grid.Column="0"
+               Grid.Row="2" />
 
             <Label x:Name="UserNameLabel"
-                   Text="Nome" />
+                   Text="Nome" 
+                    Grid.Column="1"
+               Grid.Row="2" />
 
             <Label Text="Telefone:"
-                   FontAttributes="Bold" />
+                   FontAttributes="Bold"
+                    Grid.Column="0"
+               Grid.Row="3" />
 
             <Label x:Name="UserPhoneLabel"
-                   Text="55 ( ) XXXXXX-XXXX" />
+                   Text="55 ( ) XXXXXX-XXXX"
+                   Grid.Row="3"
+               Grid.Column="1" />
 
             <Label Text="Endereço:"
-                   FontAttributes="Bold" />
+                   FontAttributes="Bold" 
+                    Grid.Column="0"
+               Grid.Row="4" />
 
             <Label x:Name="UserAddressLabel"
-                   Text="Endereço" />
+                   Text="Endereço" 
+                    Grid.Column="1"
+               Grid.Row="4"/>
 
             <Label Text="Email:"
-                   FontAttributes="Bold" />
+                   FontAttributes="Bold"
+                    Grid.Column="0"
+               Grid.Row="5" />
 
             <Label x:Name="UserEmailLabel"
-                   Text="Email" />
+                   Text="Email"
+                    Grid.Column="1"
+               Grid.Row="5" />
 
-            <StackLayout Orientation="Horizontal"
-                         HorizontalOptions="Center"
-                         Spacing="20">
+           
 
-                <Label Text="APAGAR">
+                <Label Text="APAGAR"
+                 Grid.Row="8"
+                 Grid.Column="0"
+                 HorizontalOptions="Center"/>
 
                    <ImageButton Source="delete.png"
-                   Grid.Row= "0" 
+                   Grid.Row= "9" 
                    Grid.Column="0"
                    Clicked="OnDeleteButtonClicked"
                    VerticalOptions= "Start"
                    WidthRequest="20"
                    HeightRequest="20" />
 
-                <Label Text="EDITAR">
+                <Label Text="EDITAR"
+                Grid.Row="8"
+                Grid.Column="1"
+                HorizontalOptions="Center"/>
 
                    <ImageButton Source="edit.png"
-                   Grid.Row= "0" 
-                   Grid.Column="0"
+                   Grid.Row= "9" 
+                   Grid.Column="1"
                    Clicked="OnEditButtonClicked"
                    VerticalOptions= "Start"
                    WidthRequest="20"
                    HeightRequest="20" />
-                
-            </StackLayout>
-        </StackLayout>
-    </ScrollView>
+   </Grid>
 </ContentPage>

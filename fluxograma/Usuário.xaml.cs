@@ -7,19 +7,28 @@ namespace fluxograma
         public Usuário()
         {
             InitializeComponent();
-            // Initialize with actual user data
-            UserNameLabel.Text = "Seu Nome";
-            UserPhoneLabel.Text = "55 (99) 99999-9999";
-            UserAddressLabel.Text = "Seu Endereço";
-            UserEmailLabel.Text = "seuemail@dominio.com";
         }
-
-        private void OnDeleteButtonClicked(object sender, EventArgs e)
+        private void Button_Clicked(object sender, EventArgs e)
         {
-            // Handle delete button click
-            DisplayAlert("Delete", "Delete button clicked", "OK");
-        }
+            string nome = UserNameLabel.Text;
+            string telefone = UserPhoneLabel.Text;
+            string endereco = UserAddressLabel.Text;
+            string email = UserEmailLabel.Text;
 
+            DisplayAlert("Sucesso", "Perfil atualizado com sucesso!", "OK");
+        }
+        async void OnDeleteButtonClicked(object sender, EventArgs args)
+        {
+            var resp = await DisplayAlert ("APAGAR" , "Certeza que deseja apagar este usuário?" , "SIM" , "NÃO"); 
+          // if (resp == "SIM")
+           {
+
+           }
+        }
+        private void Back(object sender, EventArgs e)
+        {
+            Application.Current.MainPage = new TelaInicial();
+        } 
         private void OnEditButtonClicked(object sender, EventArgs e)
         {
            Application.Current.MainPage = new FornecedorEditar();

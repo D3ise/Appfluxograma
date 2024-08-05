@@ -1,3 +1,5 @@
+using Fluxograma;
+
 namespace fluxograma
 {
     public partial class TelaInicial : ContentPage
@@ -9,7 +11,7 @@ namespace fluxograma
 
          private void Cliente(object sender, EventArgs e)
         {
-            Application.Current.MainPage = new Fornecedor();
+            Application.Current.MainPage = new Cliente();
         }
 
          private void Fornecedor(object sender, EventArgs e)
