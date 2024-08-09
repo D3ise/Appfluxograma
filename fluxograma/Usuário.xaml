@@ -22,91 +22,106 @@
           <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
 
              <ImageButton Source="back.png"
-                   Grid.Row= "0" 
-                   Grid.Column="0"
-                   Clicked= "Back"
-                   HorizontalOptions= "Start"
-                   WidthRequest="10"
-                   HeightRequest="5" />
+               Grid.Row= "0" 
+               Grid.Column="0"
+               Clicked= "Volta"
+               HorizontalOptions= "Start" />
 
             <Label Text="PERFIL"
                HorizontalOptions="Center"
-               Grid.ColumnSpan="2"
+               FontSize="20"
+               Grid.ColumnSpan="4"
                Grid.Row="0" />
 
             <Image Source="user.png"
-               Grid.ColumnSpan="2"
+               Grid.ColumnSpan="4"
                Grid.Row="1" />
 
             <Label Text="Nome do usuário:"
-                   FontAttributes="Bold"
-                    Grid.Column="0"
-               Grid.Row="2" />
+               FontAttributes="Bold"
+               Grid.Column="0"
+               Grid.ColumnSpan="2"
+               Grid.Row="2"
+               Padding="5" />
 
             <Label x:Name="UserNameLabel"
-                   Text="Nome" 
-                    Grid.Column="1"
-               Grid.Row="2" />
+               Text="Nome" 
+               Grid.Column="2"
+               Grid.ColumnSpan="2"
+               Grid.Row="2"
+               Padding="5" />
 
             <Label Text="Telefone:"
-                   FontAttributes="Bold"
-                    Grid.Column="0"
-               Grid.Row="3" />
+               FontAttributes="Bold"
+               Grid.Column="0"
+               Grid.ColumnSpan="2"
+               Grid.Row="3"
+               Padding="5" />
 
             <Label x:Name="UserPhoneLabel"
-                   Text="55 ( ) XXXXXX-XXXX"
-                   Grid.Row="3"
-               Grid.Column="1" />
+               Text="55 ( ) XXXXXX-XXXX"
+               Grid.Row="3"
+               Grid.Column="2"
+               Grid.ColumnSpan="2"
+               Padding="5" />
 
             <Label Text="Endereço:"
-                   FontAttributes="Bold" 
-                    Grid.Column="0"
-               Grid.Row="4" />
+               FontAttributes="Bold" 
+               Grid.Column="0"
+               Grid.ColumnSpan="2"
+               Grid.Row="4"
+               Padding="5" />
 
             <Label x:Name="UserAddressLabel"
-                   Text="Endereço" 
-                    Grid.Column="1"
-               Grid.Row="4"/>
+               Text="Endereço" 
+               Grid.Column="2"
+               Grid.ColumnSpan="2"
+               Grid.Row="4"
+               Padding="5"/>
 
             <Label Text="Email:"
-                   FontAttributes="Bold"
-                    Grid.Column="0"
-               Grid.Row="5" />
+               FontAttributes="Bold"
+               Grid.Column="0"
+               Grid.ColumnSpan="2"
+               Grid.Row="5"
+               Padding="5" />
 
             <Label x:Name="UserEmailLabel"
-                   Text="Email"
-                    Grid.Column="1"
-               Grid.Row="5" />
+               Text="Email"
+               Grid.Column="2"
+               Grid.ColumnSpan="2"
+               Grid.Row="5"
+               Padding="5" />
 
-           
+           <Label Text="APAGAR"
+               Grid.Row="8"
+               Grid.Column="0"
+               Grid.ColumnSpan="2"
+               HorizontalOptions="Center"/>
 
-                <Label Text="APAGAR"
-                 Grid.Row="8"
-                 Grid.Column="0"
-                 HorizontalOptions="Center"/>
+            <ImageButton Source="delete.png"
+               Grid.Row= "9" 
+               Grid.Column="0"
+               Grid.ColumnSpan="2"
+               Clicked="OnDeleteButtonClicked"
+               VerticalOptions= "Start" />
 
-                   <ImageButton Source="delete.png"
-                   Grid.Row= "9" 
-                   Grid.Column="0"
-                   Clicked="OnDeleteButtonClicked"
-                   VerticalOptions= "Start"
-                   WidthRequest="20"
-                   HeightRequest="20" />
+            <Label Text="EDITAR"
+               Grid.Row="8"
+               Grid.Column="2"
+               Grid.ColumnSpan="2"
+               HorizontalOptions="Center"/>
 
-                <Label Text="EDITAR"
-                Grid.Row="8"
-                Grid.Column="1"
-                HorizontalOptions="Center"/>
-
-                   <ImageButton Source="edit.png"
-                   Grid.Row= "9" 
-                   Grid.Column="1"
-                   Clicked="OnEditButtonClicked"
-                   VerticalOptions= "Start"
-                   WidthRequest="20"
-                   HeightRequest="20" />
+            <ImageButton Source="edit.png"
+               Grid.Row= "9" 
+               Grid.Column="2"
+               Grid.ColumnSpan="2"
+               Clicked="OnEditButtonClicked"
+               VerticalOptions= "Start" />
    </Grid>
 </ContentPage>

@@ -5,27 +5,34 @@
              Title="Editar perfil">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
+            <RowDefinition Height="30" />
+            <RowDefinition Height="100" />
+            <RowDefinition Height="30" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="30" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="30" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="30" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
         </Grid.RowDefinitions>
           <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
 
-        <Label Text="Editar foto"
+        <ImageButton Source="back.png"
+                   Grid.Row= "0" 
+                   Grid.Column="0"
+                   Clicked= "Volta"
+                   HorizontalOptions= "Start"
+                   WidthRequest="10"
+                   HeightRequest="5" 
+                   Padding="3"/>
+
+        <Label Text="EDITAR"
                Grid.ColumnSpan="2"
                Grid.Row="0"
                HorizontalTextAlignment="Center" />
@@ -36,7 +43,8 @@
 
         <Label Text="Nome do usuário:"
                Grid.ColumnSpan="2"
-               Grid.Row="2" />
+               Grid.Row="2"
+               Padding="3" />
 
         <Entry x:Name="entryNome"
                Grid.ColumnSpan="2"
@@ -44,7 +52,8 @@
                
         <Label Text="Telefone:"
                Grid.ColumnSpan="2"
-               Grid.Row="4" />
+               Grid.Row="4"
+               Padding="3" />
 
         <Entry x:Name="entryTelefone"
                Grid.Row="5"
@@ -53,7 +62,8 @@
 
         <Label Text="Endereço:"
                Grid.ColumnSpan="2"
-               Grid.Row="6" />
+               Grid.Row="6" 
+               Padding="3"/>
 
         <Entry x:Name="entryEndereco"
                Grid.ColumnSpan="2"
@@ -61,7 +71,8 @@
 
         <Label Text="Email:"
                Grid.ColumnSpan="2"
-               Grid.Row="8" />
+               Grid.Row="8" 
+               Padding="3"/>
 
         <Entry x:Name="entryEmail"
                Grid.ColumnSpan="2"
@@ -70,7 +81,10 @@
                
         <Button Text="Salvar"
                 Grid.Row="10"
+                Grid.ColumnSpan="2"
                 HorizontalOptions="Center"
-                Clicked="Button_Clicked" />
+                Clicked="Button_Clicked"
+                BackgroundColor="Black"
+                Padding="8" />
     </Grid>
 </ContentPage>

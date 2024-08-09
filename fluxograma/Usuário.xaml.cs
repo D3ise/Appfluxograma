@@ -25,9 +25,9 @@ namespace fluxograma
 
            }
         }
-        private void Back(object sender, EventArgs e)
+        private void Volta(object sender, EventArgs e)
         {
-            Application.Current.MainPage = new TelaInicial();
+            Application.Current.MainPage = new Fornecedor();
         } 
         private void OnEditButtonClicked(object sender, EventArgs e)
         {

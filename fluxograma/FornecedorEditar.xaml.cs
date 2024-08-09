@@ -19,5 +19,10 @@ namespace fluxograma
 
             DisplayAlert("Sucesso", "Perfil atualizado com sucesso!", "OK");
         }
+
+         private void Volta(object sender, EventArgs e)
+        {
+            Application.Current.MainPage = new Usuário();
+        }
     }
 }
