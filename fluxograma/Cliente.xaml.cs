@@ -1,6 +1,6 @@
 using fluxograma;
 
-namespace Fluxograma
+namespace fluxograma
 {
     public partial class Cliente : ContentPage
     {

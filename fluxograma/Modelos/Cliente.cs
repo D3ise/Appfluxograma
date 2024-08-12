@@ -1,18 +1,14 @@
+using LiteDB;
+
 namespace Modelos
 {
    public class Cliente : Pessoa 
    {
-   string cnpj;
+       [BsonId]
+  public int Id { get; set; }
+  public string Nome { get; set; }
+  public string Sobrenome { get; set; }
 
-   public string GetCnpj ()
-   {
-      return cnpj;
-   }
-
-   public void SetCnpj (string cnpj)
-   {
-      this.cnpj = cnpj;
-   }
-      
+  public string Telefone { get; set; }
    }
 }

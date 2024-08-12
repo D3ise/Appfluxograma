@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="fluxograma.FornecedorCadastro"
              Shell.NavBarIsVisible="False"
-             Title="Cadastro de Cliente">
+             Title="Cadastro de Fornecedor">
     <ContentPage.Content>
         <StackLayout Padding="10">
             <!-- Header with a back arrow and title -->

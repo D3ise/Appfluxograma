@@ -1,6 +1,6 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Fluxograma.ClienteEditar"
+             x:Class="fluxograma.ClienteEditar"
              Shell.NavBarIsVisible="False"
              Title="Editar perfil">
     <Grid>

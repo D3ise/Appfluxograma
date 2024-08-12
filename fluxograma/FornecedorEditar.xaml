@@ -3,88 +3,51 @@
              x:Class="fluxograma.FornecedorEditar"
              Shell.NavBarIsVisible="False"
              Title="Editar perfil">
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="30" />
-            <RowDefinition Height="100" />
-            <RowDefinition Height="30" />
-            <RowDefinition Height="*" />
-            <RowDefinition Height="30" />
-            <RowDefinition Height="*" />
-            <RowDefinition Height="30" />
-            <RowDefinition Height="*" />
-            <RowDefinition Height="30" />
-            <RowDefinition Height="*" />
-            <RowDefinition Height="*" />
-            <RowDefinition Height="*" />
-        </Grid.RowDefinitions>
-          <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="*" />
-        </Grid.ColumnDefinitions>
 
-        <ImageButton Source="back.png"
-                   Grid.Row= "0" 
-                   Grid.Column="0"
-                   Clicked= "Volta"
-                   HorizontalOptions= "Start"
-                   WidthRequest="10"
-                   HeightRequest="5" 
-                   Padding="3"/>
+    <VerticalStackLayout>
+            
+        <StackLayout Padding="10">
+            <!-- Header with a back arrow and title -->
+            <StackLayout Orientation="Horizontal"
+                         HorizontalOptions="CenterAndExpand">
+                <ImageButton Source="back_arrow.png"
+                       Clicked="Volta"
+                       HorizontalOptions="Start" />
+                <Label Text="EDITAR"
+                       FontSize="20"
+                       VerticalOptions="Center" />
+            </StackLayout>
+            <!-- Profile icon -->
+            <Image Source="user_icon.png"
+                   WidthRequest="100"
+                   HeightRequest="100"
+                   HorizontalOptions="Center"
+                   Margin="20" />
+            <!-- User input fields -->
+            <StackLayout>
+                <Label Text="Nome do usuário:" />
+                <Entry x:Name="entryNome" 
+                       Placeholder="Nome do usuário" />
 
-        <Label Text="EDITAR"
-               Grid.ColumnSpan="2"
-               Grid.Row="0"
-               HorizontalTextAlignment="Center" />
+                <Label Text="Telefone:" />
+                <Entry x:Name="entryTelefone"
+                       Placeholder="(XX) XXXXX-XXXX"
+                       Keyboard="Telephone" />
 
-        <Image Source="user.png"
-               Grid.ColumnSpan="2"
-               Grid.Row="1" />
+                <Label Text="Endereço:" />
+                <Entry x:Name="entryEndereco"
+                       Placeholder="Rua Endereço" />
 
-        <Label Text="Nome do usuário:"
-               Grid.ColumnSpan="2"
-               Grid.Row="2"
-               Padding="3" />
-
-        <Entry x:Name="entryNome"
-               Grid.ColumnSpan="2"
-               Grid.Row="3" />
-               
-        <Label Text="Telefone:"
-               Grid.ColumnSpan="2"
-               Grid.Row="4"
-               Padding="3" />
-
-        <Entry x:Name="entryTelefone"
-               Grid.Row="5"
-               Grid.ColumnSpan="2"
-               Keyboard="Telephone" />
-
-        <Label Text="Endereço:"
-               Grid.ColumnSpan="2"
-               Grid.Row="6" 
-               Padding="3"/>
-
-        <Entry x:Name="entryEndereco"
-               Grid.ColumnSpan="2"
-               Grid.Row="7" />
-
-        <Label Text="Email:"
-               Grid.ColumnSpan="2"
-               Grid.Row="8" 
-               Padding="3"/>
-
-        <Entry x:Name="entryEmail"
-               Grid.ColumnSpan="2"
-               Grid.Row="9"
-               Keyboard="Email" />
-               
-        <Button Text="Salvar"
-                Grid.Row="10"
-                Grid.ColumnSpan="2"
-                HorizontalOptions="Center"
-                Clicked="Button_Clicked"
-                BackgroundColor="Black"
-                Padding="8" />
-    </Grid>
+                <Label Text="Email" />
+                <Entry x:Name="entryEmail" 
+                       Placeholder="email@gmail.com"
+                       Keyboard="Email" />
+            </StackLayout>
+            <!-- Save button -->
+            <Button Text="SALVAR"
+                    Clicked="Button_Clicked"
+                    HorizontalOptions="Center"
+                    Margin="20" />
+        </StackLayout>
+    </VerticalStackLayout>
 </ContentPage>
