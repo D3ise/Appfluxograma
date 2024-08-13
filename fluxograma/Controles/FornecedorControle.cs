@@ -1,24 +1,48 @@
+
 using Modelos;
 
-namespace Controles
+namespace Controles;
+
+public class FornecedorControle : ControleBase
 {
-    public class FornecedorControle : ControleBase 
-    {
-        public override void Criar (Registro o)
-        {
+  //----------------------------------------------------------------------------
 
-        }
-         public override void Atualizar (Registro o)
-        {
+  public FornecedorControle() : base()
+  {
+    NomeDaTabela = "Fornecedor";
+  }
 
-        }
-        public override void Excluir (int id)
-        {
+  //----------------------------------------------------------------------------
 
-        }
-        public override Registro Ler (int id)
-        {
-            return null;
-        } 
-    }
+  public virtual Registro? Ler(int idFornecedor)
+  {
+    var collection = liteDB.GetCollection<Fornecedor>(NomeDaTabela);
+    return collection.FindOne(d => d.Id == idFornecedor);
+  }
+
+  //----------------------------------------------------------------------------
+
+  public virtual List<Fornecedor>? LerTodos()
+  {
+    var tabela = liteDB.GetCollection<Fornecedor>(NomeDaTabela);
+    return new List<Fornecedor>(tabela.FindAll().OrderBy(d => d.Nome));
+  }
+
+  //----------------------------------------------------------------------------
+
+  public virtual void Apagar(int idFornecedor)
+  {
+    var collection = liteDB.GetCollection<Fornecedor>(NomeDaTabela);
+    collection.Delete(idFornecedor);
+  }
+
+  //----------------------------------------------------------------------------
+
+  public virtual void CriarOuAtualizar(Fornecedor fornecedor)
+  {
+    var collection = liteDB.GetCollection<Fornecedor>(NomeDaTabela);
+    collection.Upsert(fornecedor);
+  }
+
+  //----------------------------------------------------------------------------
 }

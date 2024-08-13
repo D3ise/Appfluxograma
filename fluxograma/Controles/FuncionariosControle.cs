@@ -1,24 +1,48 @@
+
 using Modelos;
 
-namespace Controles
+namespace Controles;
+
+public class FuncionariosControle : ControleBase
 {
-    public class FuncionariosControle : ControleBase 
-    {
-        public override void Criar (Registro o)
-        {
+  //----------------------------------------------------------------------------
 
-        }
-         public override void Atualizar (Registro o)
-        {
+  public FuncionariosControle() : base()
+  {
+    NomeDaTabela = "Funcionarios";
+  }
 
-        }
-        public override void Excluir (int id)
-        {
+  //----------------------------------------------------------------------------
 
-        }
-        public override Registro Ler (int id)
-        {
-            return null;
-        } 
-    }
+  public virtual Registro? Ler(int idFuncionarios)
+  {
+    var collection = liteDB.GetCollection<Funcionarios>(NomeDaTabela);
+    return collection.FindOne(d => d.Id == idFuncionarios);
+  }
+
+  //----------------------------------------------------------------------------
+
+  public virtual List<Funcionarios>? LerTodos()
+  {
+    var tabela = liteDB.GetCollection<Funcionarios>(NomeDaTabela);
+    return new List<Funcionarios>(tabela.FindAll().OrderBy(d => d.Nome));
+  }
+
+  //----------------------------------------------------------------------------
+
+  public virtual void Apagar(int idFuncionarios)
+  {
+    var collection = liteDB.GetCollection<Funcionarios>(NomeDaTabela);
+    collection.Delete(idFuncionarios);
+  }
+
+  //----------------------------------------------------------------------------
+
+  public virtual void CriarOuAtualizar(Funcionarios funcionarios)
+  {
+    var collection = liteDB.GetCollection<Funcionarios>(NomeDaTabela);
+    collection.Upsert(funcionarios);
+  }
+
+  //----------------------------------------------------------------------------
 }

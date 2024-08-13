@@ -3,22 +3,17 @@
              x:Class="fluxograma.FornecedorEditar"
              Shell.NavBarIsVisible="False"
              Title="Editar perfil">
-
     <VerticalStackLayout>
-            
         <StackLayout Padding="10">
             <!-- Header with a back arrow and title -->
-            <StackLayout Orientation="Horizontal"
-                         HorizontalOptions="CenterAndExpand">
-                <ImageButton Source="back_arrow.png"
-                       Clicked="Volta"
-                       HorizontalOptions="Start" />
-                <Label Text="EDITAR"
-                       FontSize="20"
-                       VerticalOptions="Center" />
-            </StackLayout>
+                <ImageButton Source="back.png"
+                             WidthRequest="50"
+                             HeightRequest="50"
+                             Clicked="Volta"
+                             VerticalOptions="Start" 
+                             HorizontalOptions="Start"/>
             <!-- Profile icon -->
-            <Image Source="user_icon.png"
+            <Image Source="user.png"
                    WidthRequest="100"
                    HeightRequest="100"
                    HorizontalOptions="Center"
@@ -26,20 +21,17 @@
             <!-- User input fields -->
             <StackLayout>
                 <Label Text="Nome do usuário:" />
-                <Entry x:Name="entryNome" 
+                <Entry x:Name="entryNome"
                        Placeholder="Nome do usuário" />
-
                 <Label Text="Telefone:" />
                 <Entry x:Name="entryTelefone"
                        Placeholder="(XX) XXXXX-XXXX"
                        Keyboard="Telephone" />
-
                 <Label Text="Endereço:" />
                 <Entry x:Name="entryEndereco"
                        Placeholder="Rua Endereço" />
-
                 <Label Text="Email" />
-                <Entry x:Name="entryEmail" 
+                <Entry x:Name="entryEmail"
                        Placeholder="email@gmail.com"
                        Keyboard="Email" />
             </StackLayout>

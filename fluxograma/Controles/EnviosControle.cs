@@ -1,24 +1,48 @@
+
 using Modelos;
 
-namespace Controles
+namespace Controles;
+
+public class EnviosControle : ControleBase
 {
-    public class EnviosControle : ControleBase 
-    {
-        public override void Criar (Registro o)
-        {
+  //----------------------------------------------------------------------------
 
-        }
-         public override void Atualizar (Registro o)
-        {
+  public EnviosControle() : base()
+  {
+    NomeDaTabela = "Envios";
+  }
 
-        }
-        public override void Excluir (int id)
-        {
+  //----------------------------------------------------------------------------
 
-        }
-        public override Registro Ler (int id)
-        {
-            return null;
-        } 
-    }
+  public virtual Registro? Ler(int idEnvios)
+  {
+    var collection = liteDB.GetCollection<Envios>(NomeDaTabela);
+    return collection.FindOne(d => d.Id == idEnvios);
+  }
+
+  //----------------------------------------------------------------------------
+
+  public virtual List<Envios>? LerTodos()
+  {
+    var tabela = liteDB.GetCollection<Envios>(NomeDaTabela);
+    return new List<Envios>(tabela.FindAll().OrderBy(d => d.Quantidade));
+  }
+
+  //----------------------------------------------------------------------------
+
+  public virtual void Apagar(int idEnvios)
+  {
+    var collection = liteDB.GetCollection<Envios>(NomeDaTabela);
+    collection.Delete(idEnvios);
+  }
+
+  //----------------------------------------------------------------------------
+
+  public virtual void CriarOuAtualizar(Envios envios)
+  {
+    var collection = liteDB.GetCollection<Envios>(NomeDaTabela);
+    collection.Upsert(envios);
+  }
+
+  //----------------------------------------------------------------------------
 }

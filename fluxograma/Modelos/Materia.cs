@@ -1,4 +1,5 @@
 using LiteDB;
+using Modelos;
 
 namespace Modelos
 {

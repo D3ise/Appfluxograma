@@ -10,6 +10,10 @@ namespace fluxograma
         {
             Application.Current.MainPage = new TelaInicial();
         }
+         private void Criar(object sender, EventArgs e)
+        {
+            Application.Current.MainPage = new FornecedorEditar();
+        }
          private void ButtonUser(object sender, EventArgs e)
         {
            Application.Current.MainPage = new Usuário();

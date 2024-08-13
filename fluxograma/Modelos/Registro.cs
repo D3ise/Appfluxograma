@@ -1,7 +1,6 @@
-namespace Modelos
-{
+namespace Modelos;
+
     public class Registro
     {
 
     }
-}

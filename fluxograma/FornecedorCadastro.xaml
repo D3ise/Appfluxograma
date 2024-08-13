@@ -9,14 +9,14 @@
             <!-- Header with a back arrow and title -->
             <StackLayout Orientation="Horizontal"
                          HorizontalOptions="CenterAndExpand">
-                <Image Source="back_arrow.png"
+                <Image Source="back.png"
                        VerticalOptions="Center" />
                 <Label Text="CADASTRO DE CLIENTE"
                        FontSize="20"
                        VerticalOptions="Center" />
             </StackLayout>
             <!-- Profile icon -->
-            <Image Source="user_icon.png"
+            <Image Source="user.png"
                    WidthRequest="100"
                    HeightRequest="100"
                    HorizontalOptions="Center"

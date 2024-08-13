@@ -1,26 +1,48 @@
+
 using Modelos;
 
-namespace Controles
+namespace Controles;
+
+public class ProdutosControle : ControleBase
 {
-    public class ProdutosControle : ControleBase
-    {
-        
-        public override void Criar (Registro o)
-        {
+  //----------------------------------------------------------------------------
 
-        }
-         public override void Atualizar (Registro o)
-        {
+  public ProdutosControle() : base()
+  {
+    NomeDaTabela = "Produtos";
+  }
 
-        }
-        public override void Excluir (int id)
-        {
+  //----------------------------------------------------------------------------
 
-        }
-        public override Registro Ler (int id)
-        {
-            return null;
-        } 
-    
-    }
+  public virtual Registro? Ler(int idProdutos)
+  {
+    var collection = liteDB.GetCollection<Produtos>(NomeDaTabela);
+    return collection.FindOne(d => d.Id == idProdutos);
+  }
+
+  //----------------------------------------------------------------------------
+
+  public virtual List<Produtos>? LerTodos()
+  {
+    var tabela = liteDB.GetCollection<Produtos>(NomeDaTabela);
+    return new List<Produtos>(tabela.FindAll().OrderBy(d => d.Nome));
+  }
+
+  //----------------------------------------------------------------------------
+
+  public virtual void Apagar(int idProdutos)
+  {
+    var collection = liteDB.GetCollection<Produtos>(NomeDaTabela);
+    collection.Delete(idProdutos);
+  }
+
+  //----------------------------------------------------------------------------
+
+  public virtual void CriarOuAtualizar(Produtos produtos)
+  {
+    var collection = liteDB.GetCollection<Produtos>(NomeDaTabela);
+    collection.Upsert(produtos);
+  }
+
+  //----------------------------------------------------------------------------
 }

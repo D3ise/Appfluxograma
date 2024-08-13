@@ -1,24 +1,48 @@
+
 using Modelos;
 
-namespace Controles
+namespace Controles;
+
+public class EstoqueControle : ControleBase
 {
-    public class EstoqueControle : ControleBase 
-    {
-        public override void Criar (Registro o)
-        {
+  //----------------------------------------------------------------------------
 
-        }
-         public override void Atualizar (Registro o)
-        {
+  public EstoqueControle() : base()
+  {
+    NomeDaTabela = "Estoque";
+  }
 
-        }
-        public override void Excluir (int id)
-        {
+  //----------------------------------------------------------------------------
 
-        }
-        public override Registro Ler (int id)
-        {
-            return null;
-        } 
-    }
+  public virtual Registro? Ler(int idEstoque)
+  {
+    var collection = liteDB.GetCollection<Estoque>(NomeDaTabela);
+    return collection.FindOne(d => d.Id == idEstoque);
+  }
+
+  //----------------------------------------------------------------------------
+
+  public virtual List<Estoque>? LerTodos()
+  {
+    var tabela = liteDB.GetCollection<Estoque>(NomeDaTabela);
+    return new List<Estoque>(tabela.FindAll().OrderBy(d => d.Quantidade));
+  }
+
+  //----------------------------------------------------------------------------
+
+  public virtual void Apagar(int idEstoque)
+  {
+    var collection = liteDB.GetCollection<Estoque>(NomeDaTabela);
+    collection.Delete(idEstoque);
+  }
+
+  //----------------------------------------------------------------------------
+
+  public virtual void CriarOuAtualizar(Estoque estoque)
+  {
+    var collection = liteDB.GetCollection<Estoque>(NomeDaTabela);
+    collection.Upsert(estoque);
+  }
+
+  //----------------------------------------------------------------------------
 }
