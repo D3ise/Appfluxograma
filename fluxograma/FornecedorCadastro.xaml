@@ -9,9 +9,12 @@
             <!-- Header with a back arrow and title -->
             <StackLayout Orientation="Horizontal"
                          HorizontalOptions="CenterAndExpand">
-                <Image Source="back.png"
+                <ImageButton Source="back.png"
+                       Clicked= "Volta"
+                       WidthRequest="50"
+                       HeightRequest="50"
                        VerticalOptions="Center" />
-                <Label Text="CADASTRO DE CLIENTE"
+                <Label Text="CADASTRO DE FORNECEDOR"
                        FontSize="20"
                        VerticalOptions="Center" />
             </StackLayout>
@@ -24,18 +27,19 @@
             <!-- User input fields -->
             <StackLayout>
                 <Label Text="Nome do usuário:" />
-                <Entry Placeholder="Nome do usuário" />
+                <Entry x:Name="NomeEntry" />
                 <Label Text="Telefone:" />
-                <Entry Placeholder="Telefone"
+                <Entry x:Name="TelefoneEntry"
                        Keyboard="Telephone" />
-                <Label Text="Endereço:" />
-                <Entry Placeholder="Endereço" />
+                <Label Text="CPF:" />
+                <Entry x:Name="CpfEntry" />
                 <Label Text="Email" />
-                <Entry Placeholder="Email"
+                <Entry x:Name="EmailEntry"
                        Keyboard="Email" />
             </StackLayout>
             <!-- Save button -->
             <Button Text="SALVAR"
+                    Clicked="Button"
                     HorizontalOptions="Center"
                     Margin="20" />
         </StackLayout>

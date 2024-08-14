@@ -12,7 +12,7 @@ namespace fluxograma
         }
          private void Criar(object sender, EventArgs e)
         {
-            Application.Current.MainPage = new FornecedorEditar();
+            Application.Current.MainPage = new FornecedorCadastro();
         }
          private void ButtonUser(object sender, EventArgs e)
         {

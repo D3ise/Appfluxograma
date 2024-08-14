@@ -31,7 +31,7 @@ namespace fluxograma
         } 
         private void OnEditButtonClicked(object sender, EventArgs e)
         {
-           Application.Current.MainPage = new FornecedorEditar();
+           Application.Current.MainPage = new FornecedorCadastro();
         }
 
     }

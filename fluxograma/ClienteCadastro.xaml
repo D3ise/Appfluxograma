@@ -23,20 +23,21 @@
                    Margin="20" />
             <!-- User input fields -->
             <StackLayout>
-                <Label Text="Nome do usuário:" />
-                <Entry Placeholder="Nome do usuário" />
+                <Label Text="Nome:" />
+                 <Entry x:Name ="NomeEntry"/>
                 <Label Text="Telefone:" />
-                <Entry Placeholder="Telefone"
+                 <Entry x:Name ="TelefoneEntry"
                        Keyboard="Telephone" />
-                <Label Text="Endereço:" />
-                <Entry Placeholder="Endereço" />
+                <Label Text="CPF:" />
+                <Entry x:Name ="CpfEntry"/>
                 <Label Text="Email" />
-                <Entry Placeholder="Email"
+                <Entry x:Name ="EmailEntry"
                        Keyboard="Email" />
             </StackLayout>
             <!-- Save button -->
             <Button Text="SALVAR"
                     HorizontalOptions="Center"
+                    Clicked="Button_Clicked"
                     Margin="20" />
         </StackLayout>
     </ContentPage.Content>
