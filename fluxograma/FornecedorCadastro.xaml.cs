@@ -9,23 +9,30 @@ namespace fluxograma
         public FornecedorCadastro()
         {
             InitializeComponent();
+            ListaClientes.ItemsSource = fornecedorControle.LerTodos();
         }
-          async void Button(object sender, EventArgs args)
+
+        void QuandoSelecionarUmItemNaLista(object sender, SelectedItemChangedEventArgs e)
         {
-            {
+
+        }
+
+        async void Button(object sender, EventArgs args)
+        {
+
             var fornecedor = new Modelos.Fornecedor();
 
-            fornecedor.Id      = 0;
-            fornecedor.Nome      = NomeEntry.Text;
+            fornecedor.Id = 0;
+            fornecedor.Nome = NomeEntry.Text;
             //cliente.Sobrenome = SobrenomeEntry.Text;
-            fornecedor.Telefone  = TelefoneEntry.Text;
-            fornecedor.Cpf     = CpfEntry.Text;
-            fornecedor.Email     = EmailEntry.Text;
+            fornecedor.Telefone = TelefoneEntry.Text;
+            fornecedor.Cpf = CpfEntry.Text;
+            fornecedor.Email = EmailEntry.Text;
 
             fornecedorControle.CriarOuAtualizar(fornecedor);
 
             await DisplayAlert("Salvar", "Dados salvos com sucesso!", "OK");
-            }
+
         }
         private void Volta(object sender, EventArgs e)
         {

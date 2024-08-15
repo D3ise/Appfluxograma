@@ -5,6 +5,11 @@ namespace fluxograma
         public Fornecedor()
         {
             InitializeComponent();
+            ListaClientes.ItemsSource = fornecedorControle.LerTodos();
+        }
+        void QuandoSelecionarUmItemNaLista(object sender, SelectedItemChangedEventArgs e)
+        {
+
         }
         private void Volta(object sender, EventArgs e)
         {

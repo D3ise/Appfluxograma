@@ -31,6 +31,33 @@
                    Grid.ColumnSpan="2"
                    HorizontalOptions="Center"
                    FontSize="20" />
+
+                <ListView x:Name="ListaClientes"
+                          HasUnevenRows="True"
+                          ItemSelected="QuandoSelecionarUmItemNaLista"
+                          WidthRequest="100"
+                          HeightRequest="100"
+                          HorizontalOptions="Fill"
+                          VerticalOptions="Fill">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <VerticalStackLayout Padding="20"
+                                                     BackgroundColor="Pink">
+                                    <HorizontalStackLayout>
+                                        <Label Text="{Binding Nome}"
+                                               FontSize="10" />
+                                        <Label Text="{Binding Sobrenome}"
+                                               FontSize="20"
+                                               Margin="10,0,0,0" />
+                                    </HorizontalStackLayout>
+                                    <Label Text="{Binding Telefone}"
+                                           FontSize="10" />
+                                </VerticalStackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
      
             <SearchBar Placeholder="Nome do fornecedor"
                      Grid.Row= "1" 
@@ -53,10 +80,7 @@
                    HeightRequest="50"
                    Padding="2" />
 
-            <Label Text="Nome do fornecedor"
-                   Grid.Row= "2" 
-                   Grid.Column="1"
-                   VerticalOptions="Center" />
+            
 
         <ImageButton Source="user.png"
                    Grid.Row= "3" 
