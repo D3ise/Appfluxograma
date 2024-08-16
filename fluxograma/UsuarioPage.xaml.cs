@@ -1,13 +1,15 @@
 using Microsoft.Maui.Controls;
+using Modelos;
 
 namespace fluxograma
 {
-    public partial class Usuário : ContentPage
+    public partial class UsuarioPage : ContentPage
     {
-        public Usuário()
+        public UsuarioPage()
         {
             InitializeComponent();
         }
+
         private void Button_Clicked(object sender, EventArgs e)
         {
             string nome = UserNameLabel.Text;
@@ -27,11 +29,11 @@ namespace fluxograma
         }
         private void Volta(object sender, EventArgs e)
         {
-            Application.Current.MainPage = new Fornecedor();
+            Application.Current.MainPage = new FornecedorPage();
         } 
         private void OnEditButtonClicked(object sender, EventArgs e)
         {
-           Application.Current.MainPage = new FornecedorCadastro();
+           Application.Current.MainPage = new FornecedorCadastroPage();
         }
 
     }

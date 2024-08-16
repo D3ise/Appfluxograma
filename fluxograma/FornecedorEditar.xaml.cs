@@ -22,7 +22,7 @@ namespace fluxograma
 
          private void Volta(object sender, EventArgs e)
         {
-            Application.Current.MainPage = new Usuário();
+            Application.Current.MainPage = new UsuarioPage();
         }
     }
 }

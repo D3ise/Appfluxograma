@@ -16,7 +16,7 @@ namespace fluxograma
 
          private void Fornecedor(object sender, EventArgs e)
         {
-            Application.Current.MainPage = new Fornecedor();
+            Application.Current.MainPage = new FornecedorPage();
         }
     }
 }

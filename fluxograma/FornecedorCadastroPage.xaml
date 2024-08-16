@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="fluxograma.FornecedorCadastroPage"
+             Shell.NavBarIsVisible="False"
+             Title="Cadastro de Fornecedor">
+    <ContentPage.Content>
+        <StackLayout Padding="10">
+            <!-- Header with a back arrow and title -->
+            <StackLayout Orientation="Horizontal"
+                         HorizontalOptions="CenterAndExpand">
+                <ImageButton Source="back.png"
+                             Clicked="Volta"
+                             WidthRequest="50"
+                             HeightRequest="50"
+                             HorizontalOptions="Start" />
+                <Label Text="FORNECEDOR"
+                       FontSize="20"
+                       HorizontalOptions="Center" />
+            </StackLayout>
+            <!-- Profile icon -->
+            <Image Source="user.png"
+                   WidthRequest="100"
+                   HeightRequest="100"
+                   HorizontalOptions="Center"
+                   Margin="20" />
+            <!-- User input fields -->
+            <StackLayout>
+                <Label Text="Nome do usuário:" />
+                <Entry x:Name="NomeEntry" />
+                <Label Text="Telefone:" />
+                <Entry x:Name="TelefoneEntry"
+                       Keyboard="Telephone" />
+                <Label Text="CPF:" />
+                <Entry x:Name="CpfEntry" />
+                <Label Text="Email" />
+                <Entry x:Name="EmailEntry"
+                       Keyboard="Email" />
+            </StackLayout>
+            <!-- Save button -->
+            <Grid>
+            <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+            <Button Text="SALVAR"
+                    Clicked="OnSaveButtonClicked"
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    Background="#6c00ff"
+                    Margin="20" />
+
+            <Button Text="APAGAR"
+                    Clicked="OnDeleteButtonClicked"
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    Background="#6c00ff"
+                    Margin="20" />
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
