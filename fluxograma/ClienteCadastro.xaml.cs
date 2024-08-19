@@ -2,7 +2,7 @@ namespace fluxograma
 {
     public partial class ClienteCadastro : ContentPage
     {
-        public Cliente cliente { get; set; }
+        public ClientePage cliente { get; set; }
         Controles.ClienteControle clienteControle = new Controles.ClienteControle();
         public ClienteCadastro()
         {

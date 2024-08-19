@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="fluxograma.FornecedorPage"
+             x:Class="fluxograma.ClientePage"
              Shell.NavBarIsVisible="False"
-             Title="Fornecedor">
-
-    <Grid>
+             Title="Clientes">
+     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="40"/>
             <RowDefinition Height="50"/>
@@ -17,27 +16,27 @@
         </Grid.ColumnDefinitions>
 
         <ImageButton Source="back.png"
+                     Clicked="Back"
                      Grid.Row="0"
                      Grid.Column="0"
-                     Clicked="Volta"
                      HorizontalOptions="Start"/>
 
-        <Label Text="FORNECEDORES"
+        <Label Text="CLIENTES"
                Grid.Row="0"
                Grid.ColumnSpan="2"
                HorizontalOptions="Center"
                FontSize="20"/>
 
 
-        <SearchBar Placeholder="Nome do fornecedor"
+        <SearchBar Placeholder="Nome do cliente"
                    Grid.Row="1"
                    Grid.ColumnSpan="2"
                    HorizontalOptions="FillAndExpand"/>
-        <Button Text="+"
+        <Button Text="+" 
+                Clicked="Criar"
                 Grid.Row="1"
                 Grid.Column="1"
                 FontSize="25"
-                Clicked="Criar"
                 HorizontalOptions="End"
                 Padding="3"/>
 
@@ -46,7 +45,6 @@
                   Grid.Column="0"
                   Grid.ColumnSpan="2"
                   HasUnevenRows="True"
-                  ItemSelected="QuandoSelecionarUmItemNaLista"
                   HorizontalOptions="Fill"
                   VerticalOptions="Fill">
             <ListView.ItemTemplate >

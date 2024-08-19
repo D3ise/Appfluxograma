@@ -7,17 +7,28 @@
     <ContentPage.Content>
         <StackLayout Padding="10">
             <!-- Header with a back arrow and title -->
-            <StackLayout Orientation="Horizontal"
-                         HorizontalOptions="CenterAndExpand">
+            <Grid>
+            <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
                 <ImageButton Source="back.png"
+                             Grid.Row="0"
+                             Grid.Column="0"
                              Clicked="Volta"
                              WidthRequest="50"
                              HeightRequest="50"
                              HorizontalOptions="Start" />
-                <Label Text="FORNECEDOR"
+                <Label Text="CADASTRAR"
+                       Grid.Row="0"
+                       Grid.Column="1"
                        FontSize="20"
                        HorizontalOptions="Center" />
-            </StackLayout>
+                       </Grid>
+
             <!-- Profile icon -->
             <Image Source="user.png"
                    WidthRequest="100"
@@ -26,14 +37,17 @@
                    Margin="20" />
             <!-- User input fields -->
             <StackLayout>
-                <Label Text="Nome do usuário:" />
+                <Label x:Name="LabelId" />
+                <Label Text="Nome:" />
                 <Entry x:Name="NomeEntry" />
+                <Label Text="Sobrenome:" />
+                <Entry x:Name="SobrenomeEntry" />
                 <Label Text="Telefone:" />
                 <Entry x:Name="TelefoneEntry"
                        Keyboard="Telephone" />
                 <Label Text="CPF:" />
                 <Entry x:Name="CpfEntry" />
-                <Label Text="Email" />
+                <Label Text="Email:" />
                 <Entry x:Name="EmailEntry"
                        Keyboard="Email" />
             </StackLayout>

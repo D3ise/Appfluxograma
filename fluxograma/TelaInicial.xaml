@@ -29,6 +29,8 @@
                 <Button Text="CLIENTES"
                     Grid.Row="0"
                     Grid.Column="0"
+                    BorderWidth="1"
+                    BorderColor="Black"
                     Clicked= "Cliente"
                     BackgroundColor="#ADD8E6"
                     TextColor="Black">
@@ -43,6 +45,8 @@
                 <Button Text="FORNECEDORES"
                         Grid.Row="0"
                         Grid.Column="1"
+                        BorderWidth="1"
+                        BorderColor="Black" 
                         Clicked= "Fornecedor"
                         BackgroundColor="#FFB6C1"
                         TextColor="Black">
@@ -54,9 +58,11 @@
                     Grid.Row="0"
                    Grid.Column="1"/>
 
-                <Button Grid.Row="1"
+                <Button Text="TRANSPORTADORAS"
+                        Grid.Row="1"
                         Grid.Column="0"
-                        Text="TRANSPORTADORAS"
+                        BorderWidth="1"
+                        BorderColor="Black"
                         BackgroundColor="#FFFF99"
                         TextColor="Black">
                 </Button>
@@ -67,9 +73,11 @@
                     Grid.Row="1"
                    Grid.Column="0"/>
 
-                <Button Grid.Row="1"
+                <Button Text="PRODUTOS"
+                        Grid.Row="1"
                         Grid.Column="1"
-                        Text="PRODUTOS"
+                        BorderWidth="1"
+                        BorderColor="Black"
                         BackgroundColor="#98FB98"
                         TextColor="Black">
                 </Button>
@@ -80,9 +88,11 @@
                     Grid.Row="1"
                    Grid.Column="1"/>
 
-                <Button Grid.Row="2"
+                <Button Text="MATÉRIA PRIMA"
+                        Grid.Row="2"
                         Grid.Column="0"
-                        Text="MATÉRIA PRIMA"
+                        BorderWidth="1"
+                        BorderColor="Black"
                         BackgroundColor="#DDA0DD"
                         TextColor="Black">
                 </Button>
@@ -93,9 +103,11 @@
                     Grid.Row="2"
                    Grid.Column="0"/>
 
-                <Button Grid.Row="2"
+                <Button Text="PEDIDOS"
+                        Grid.Row="2"
                         Grid.Column="1"
-                        Text="PEDIDOS"
+                        BorderWidth="1"
+                        BorderColor="Black"
                         BackgroundColor="#FFA07A"
                         TextColor="Black">
                 </Button>
@@ -106,9 +118,11 @@
                     Grid.Row="2"
                    Grid.Column="1"/>
 
-                <Button Grid.Row="3"
+                <Button Text="ESTOQUE"
+                        Grid.Row="3"
                         Grid.Column="0"
-                        Text="ESTOQUE"
+                        BorderWidth="1"
+                        BorderColor="Black"
                         BackgroundColor="#96D1C1"
                         TextColor="Black">
                 </Button>
@@ -119,9 +133,11 @@
                     Grid.Row="3"
                    Grid.Column="0"/>
 
-                <Button Grid.Row="3"
+                <Button Text="FUNCIONÁRIOS"
+                        Grid.Row="3"
                         Grid.Column="1"
-                        Text="FUNCIONÁRIOS"
+                        BorderWidth="1"
+                        BorderColor="Black"
                         BackgroundColor="#D3D3D3"
                         TextColor="Black">
                 </Button>
@@ -136,6 +152,8 @@
             <Button Text="+"
                     FontSize="24"
                     CornerRadius="30"
+                    BorderWidth="1"
+                    BorderColor="Black"
                     WidthRequest="60"
                     HeightRequest="60"
                     HorizontalOptions="End"

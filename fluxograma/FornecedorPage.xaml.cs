@@ -24,13 +24,6 @@ namespace fluxograma
         {
             Application.Current.MainPage = new FornecedorCadastroPage();
         }
-        private void ButtonUser(object sender, EventArgs e)
-        {
-            Application.Current.MainPage = new UsuarioPage();
-        }
-        private void User(object sender, EventArgs e)
-        {
-            Application.Current.MainPage = new UsuarioPage();
-        }
+
     }
 }

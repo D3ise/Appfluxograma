@@ -11,7 +11,7 @@ namespace fluxograma
 
          private void Cliente(object sender, EventArgs e)
         {
-            Application.Current.MainPage = new Cliente();
+            Application.Current.MainPage = new ClientePage();
         }
 
          private void Fornecedor(object sender, EventArgs e)
