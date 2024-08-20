@@ -45,6 +45,7 @@
                   Grid.Column="0"
                   Grid.ColumnSpan="2"
                   HasUnevenRows="True"
+                  ItemSelected="QuandoSelecionarUmItemNaLista"
                   HorizontalOptions="Fill"
                   VerticalOptions="Fill">
             <ListView.ItemTemplate >

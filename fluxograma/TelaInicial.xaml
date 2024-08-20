@@ -78,6 +78,7 @@
                         Grid.Column="1"
                         BorderWidth="1"
                         BorderColor="Black"
+                        Clicked= "Produto"
                         BackgroundColor="#98FB98"
                         TextColor="Black">
                 </Button>

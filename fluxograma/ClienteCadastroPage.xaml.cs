@@ -3,50 +3,50 @@ using Modelos;
 
 namespace fluxograma
 {
-    public partial class FornecedorCadastroPage : ContentPage
+    public partial class ClienteCadastroPage : ContentPage
     {
-        public Fornecedor fornecedor { get; set; }
-        Controles.FornecedorControle fornecedorControle = new Controles.FornecedorControle();
-        public FornecedorCadastroPage()
+        public Cliente cliente { get; set; }
+        Controles.ClienteControle clienteControle = new Controles.ClienteControle();
+        public ClienteCadastroPage()
         {
             InitializeComponent();
-            
         }
+
         protected override void OnAppearing()
         {
             base.OnAppearing();
-            if (fornecedor != null)
+            if (cliente != null)
             {
-                NomeEntry.Text = fornecedor.Nome;
-                SobrenomeEntry.Text = fornecedor.Sobrenome;
-                TelefoneEntry.Text = fornecedor.Telefone;
-                CpfEntry.Text = fornecedor.Cpf;
-                EmailEntry.Text = fornecedor.Email;
-                LabelId.Text = fornecedor.Id.ToString();
+                NomeEntry.Text = cliente.Nome;
+                SobrenomeEntry.Text = cliente.Sobrenome;
+                TelefoneEntry.Text = cliente.Telefone;
+                CpfEntry.Text = cliente.Cpf;
+                EmailEntry.Text = cliente.Email;
+                LabelId.Text = cliente.Id.ToString();
 
             }
         }
 
-        async void OnSaveButtonClicked(object sender, EventArgs args)
+         async void OnSaveButtonClicked(object sender, EventArgs args)
         {
-            if (await VerificaDados())
+             if (await VerificaDados())
             {
-                var fornecedor = new Modelos.Fornecedor();
+            var cliente = new Modelos.Cliente();
 
-                fornecedor.Id = 0;
-                fornecedor.Nome = NomeEntry.Text;
-                fornecedor.Sobrenome = SobrenomeEntry.Text;
-                fornecedor.Telefone = TelefoneEntry.Text;
-                fornecedor.Cpf = CpfEntry.Text;
-                fornecedor.Email = EmailEntry.Text;
+            cliente.Id      = 0;
+            cliente.Nome      = NomeEntry.Text;
+            cliente.Sobrenome = SobrenomeEntry.Text;
+            cliente.Telefone  = TelefoneEntry.Text;
+             cliente.Cpf     = CpfEntry.Text;
+             cliente.Email     = EmailEntry.Text;
 
-                fornecedorControle.CriarOuAtualizar(fornecedor);
+            clienteControle.CriarOuAtualizar(cliente);
 
-                await DisplayAlert("Salvar", "Dados salvos com sucesso!", "OK");
+            await DisplayAlert("Salvar", "Dados salvos com sucesso!", "OK");
             }
         }
 
-        private async Task<bool> VerificaDados()
+         private async Task<bool> VerificaDados()
         {
             if (String.IsNullOrEmpty(NomeEntry.Text))
             {
@@ -78,16 +78,17 @@ namespace fluxograma
         }
         private void Volta(object sender, EventArgs e)
         {
-            Application.Current.MainPage = new FornecedorPage();
+            Application.Current.MainPage = new ClientePage();
         }
         async void OnDeleteButtonClicked(object sender, EventArgs args)
         {
             var resp = await DisplayAlert("APAGAR", "Certeza que deseja apagar este usuário?", "SIM", "NÃO");
             if (resp)
             {
-                fornecedorControle.Apagar(fornecedor.Id);
-                Application.Current.MainPage = new FornecedorPage();
+                clienteControle.Apagar(cliente.Id);
+                Application.Current.MainPage = new ClientePage();
             }
         }
     }
 }
+    

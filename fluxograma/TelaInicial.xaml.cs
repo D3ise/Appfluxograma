@@ -18,5 +18,10 @@ namespace fluxograma
         {
             Application.Current.MainPage = new FornecedorPage();
         }
+
+        private void Produto(object sender, EventArgs e)
+        {
+            Application.Current.MainPage = new ProdutoPage();
+        }
     }
 }
