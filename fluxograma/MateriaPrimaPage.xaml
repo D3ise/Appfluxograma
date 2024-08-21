@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="fluxograma.MateriaPrimaPage"
+             Shell.NavBarIsVisible="False"
+             Title="Matéria-Prima">
+
+    <StackLayout Padding="5">
+
+        <!-- Search and Add Section -->
+        <StackLayout Orientation="Horizontal"
+                Padding="0, 20, 0, 0">
+            <SearchBar Placeholder="Pesquisar..."
+                    HorizontalOptions="FillAndExpand"/>
+            <Button Text="+"
+                    BackgroundColor="#AB83A1"
+                    TextColor="White"
+                    Clicked="OnAddButtonClicked"/>
+        </StackLayout>
+
+        <!-- Table Section -->
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Label Text="MATÉRIA-PRIMA"
+                    BackgroundColor="#D1A3DA"
+                    Grid.Row="0"
+                    FontAttributes="Bold"
+                    HorizontalTextAlignment="Center"/>
+            <Label Text="UNIDADE"
+                    BackgroundColor="#D1A3DA"
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    FontAttributes="Bold"
+                    HorizontalTextAlignment="Center"/>
+
+            <!-- Data Rows -->
+
+            <ListView x:Name="ListaClientes"
+                  Grid.Row="2"
+                  Grid.Column="0"
+                  Grid.ColumnSpan="2"
+                  HasUnevenRows="True"
+                  ItemSelected="QuandoSelecionarUmItemNaLista"
+                  HorizontalOptions="Fill"
+                  VerticalOptions="Fill">
+            <ListView.ItemTemplate >
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid Padding="0, 10">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Label Text="{Binding Nome}"/>
+                            <Label Text="{Binding Unidade}"
+                                    Grid.Column="1"/>
+                            <ImageButton Source="delete.png"
+                                    Grid.Column="2"
+                                    Clicked="OnDeleteButtonClicked"/>
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+        </Grid>
+
+        <!-- Popup dialogs (These should be hidden initially and shown conditionally in your code-behind) -->
+
+        <!-- Add/Edit Section -->
+        <Frame x:Name= "frameAdiciona"
+                IsVisible="False"
+                BackgroundColor="White"
+                Padding="10"
+                CornerRadius="10">
+            <StackLayout>
+                <Label Text="Matéria Prima"
+                        FontAttributes="Bold"/>
+                <Entry x:Name="NomeEntry"
+                      Placeholder="Matéria Prima"
+                        Text="{Binding Nome}"/>
+                <Label Text="Unidade:"
+                        FontAttributes="Bold"/>
+                <Entry x:Name="EntryUnidade"
+                        Placeholder="Unidade"
+                        Text="{Binding Unidade}"/>
+                <StackLayout Orientation="Horizontal"
+                        HorizontalOptions="Center"
+                        Spacing="20">
+                    <Button Text="Adicionar"
+                            BackgroundColor="LightGreen"
+                            TextColor="Black"
+                            Clicked="OnSaveButtonClicked"/>
+                    <Button Text="Cancelar"
+                            TextColor="Black"
+                            BackgroundColor="LightCoral"
+                            Clicked="OnCancelClicked"/>
+                </StackLayout>
+            </StackLayout>
+        </Frame>
+
+        <!-- Confirmation Popup -->
+        <Frame  x:Name="frameConfirma"
+                IsVisible="False"
+                BackgroundColor="White"
+                Padding="10"
+                CornerRadius="10"
+                VerticalOptions="Center">
+            <StackLayout>
+                <Label Text="ATENÇÃO"
+                        FontAttributes="Bold"
+                        TextColor="Red"
+                        HorizontalOptions="Center"/>
+                <Label Text="MATÉRIA-PRIMA JÁ CADASTRADA. CERTEZA QUE DESEJA SUBSTITUIR DADO?"
+                        HorizontalOptions="Center"/>
+                <StackLayout Orientation="Horizontal"
+                        HorizontalOptions="Center"
+                        Spacing="20">
+                    <Button Text="SIM"
+                            BackgroundColor="LightGreen"
+                            Clicked="OnReplaceConfirmClicked"/>
+                    <Button Text="NÃO"
+                            BackgroundColor="LightCoral"
+                            Clicked="OnReplaceCancelClicked"/>
+                </StackLayout>
+            </StackLayout>
+        </Frame>
+
+        <!-- Success Popup -->
+        <Frame  x:Name="frameSucesso"
+                IsVisible="False"
+                BackgroundColor="White"
+                Padding="10"
+                CornerRadius="10"
+                VerticalOptions="Center">
+            <StackLayout>
+                <Label Text="MATÉRIA-PRIMA CADASTRADA COM SUCESSO."
+                        FontAttributes="Bold"
+                        TextColor="Green"
+                        HorizontalOptions="Center"/>
+                <Button Text="OK"
+                        Clicked="OnSuccessOkClicked"/>
+            </StackLayout>
+        </Frame>
+
+        <!-- Delete Confirmation Popup -->
+        <Frame  x:Name="frameApagar"
+                IsVisible="False"
+                BackgroundColor="White"
+                Padding="10"
+                CornerRadius="10"
+                VerticalOptions="Center">
+            <StackLayout>
+                <Label Text="APAGAR ESTE ITEM?"
+                        FontAttributes="Bold"
+                        TextColor="Red"
+                        HorizontalOptions="Center"/>
+                <StackLayout Orientation="Horizontal"
+                        HorizontalOptions="Center"
+                        Spacing="20">
+                    <Button Text="SIM"
+                            BackgroundColor="LightGreen"
+                            Clicked="OnDeleteConfirmClicked"/>
+                    <Button Text="NÃO"
+                            BackgroundColor="LightCoral"
+                            Clicked="OnDeleteCancelClicked"/>
+                </StackLayout>
+            </StackLayout>
+        </Frame>
+
+        <!-- Delete Success Popup -->
+        <Frame  x:Name="frameApagado"
+                IsVisible="False"
+                BackgroundColor="White"
+                Padding="10"
+                CornerRadius="10"
+                VerticalOptions="Center">
+            <StackLayout>
+                <Label Text="ITEM APAGADO COM SUCESSO"
+                        FontAttributes="Bold"
+                        TextColor="Green"
+                        HorizontalOptions="Center"/>
+                <Button Text="OK"
+                        Clicked="OnDeleteSuccessOkClicked"/>
+            </StackLayout>
+        </Frame>
+
+    </StackLayout>
+</ContentPage>

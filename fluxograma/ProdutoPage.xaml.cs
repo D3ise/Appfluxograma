@@ -29,10 +29,6 @@ namespace fluxograma
             grid.RowDefinitions.Add(new RowDefinition { Height = GridLength.Auto });
 
             // Exemplo de novo produto
-            grid.Children.Add(new Label { Text = "Novo Produto" }, 0, row);
-            grid.Children.Add(new Label { Text = "R$ 0,00" }, 1, row);
-            grid.Children.Add(new Label { Text = "Nova Matéria" }, 2, row);
-            grid.Children.Add(new Button { Text = "🗑", CommandParameter = row, Clicked = OnDeleteButtonClicked }, 3, row);
         }
     }
 }

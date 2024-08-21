@@ -23,5 +23,10 @@ namespace fluxograma
         {
             Application.Current.MainPage = new ProdutoPage();
         }
+
+        private void MateriaPrima(object sender, EventArgs e)
+        {
+            Application.Current.MainPage = new MateriaPrimaPage();
+        }
     }
 }

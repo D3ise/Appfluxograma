@@ -94,6 +94,7 @@
                         Grid.Column="0"
                         BorderWidth="1"
                         BorderColor="Black"
+                        Clicked= "MateriaPrima"
                         BackgroundColor="#DDA0DD"
                         TextColor="Black">
                 </Button>
