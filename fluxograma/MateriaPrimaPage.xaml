@@ -1,11 +1,21 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8"?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="fluxograma.MateriaPrimaPage"
              Shell.NavBarIsVisible="False"
              Title="Matéria-Prima">
 
+             
+
     <StackLayout Padding="5">
+
+    <ImageButton Source="back.png"
+                     WidthRequest="50"
+                     HeightRequest="50"
+                     Grid.Row="0"
+                     Grid.Column="0"
+                     Clicked="Volta"
+                     HorizontalOptions="Start"/>
 
         <!-- Search and Add Section -->
         <StackLayout Orientation="Horizontal"
@@ -86,13 +96,17 @@
                 CornerRadius="10">
             <StackLayout>
                 <Label Text="Matéria Prima"
+                        TextColor="Black"
                         FontAttributes="Bold"/>
                 <Entry x:Name="NomeEntry"
-                      Placeholder="Matéria Prima"
+                        TextColor="Black"
+                        Placeholder="Matéria Prima"
                         Text="{Binding Nome}"/>
                 <Label Text="Unidade:"
+                       TextColor="Black"
                         FontAttributes="Bold"/>
                 <Entry x:Name="EntryUnidade"
+                        TextColor="Black"
                         Placeholder="Unidade"
                         Text="{Binding Unidade}"/>
                 <StackLayout Orientation="Horizontal"

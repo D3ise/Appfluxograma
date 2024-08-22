@@ -1,5 +1,4 @@
 using System.Collections.ObjectModel;
-using Microsoft.Maui.Controls;
 using Controles;
 using Modelos;
 
@@ -11,11 +10,6 @@ namespace fluxograma
         public Materia materia { get; set; }
         Controles.MateriaControle materiaControle = new Controles.MateriaControle();
         public ObservableCollection<Materia> MateriaPrimaItems { get; set; }
-        public bool IsAddEditVisible { get; set; }
-        public bool IsConfirmationVisible { get; set; }
-        public bool IsSuccessVisible { get; set; }
-        public bool IsDeleteConfirmVisible { get; set; }
-        public bool IsDeleteSuccessVisible { get; set; }
 
         public MateriaPrimaPage()
         {
@@ -30,6 +24,11 @@ namespace fluxograma
             Application.Current.MainPage = page;
         }
 
+        private void Volta(object sender, EventArgs e)
+        {
+            Application.Current.MainPage = new TelaInicial();
+        }
+
         private void OnAddButtonClicked(object sender, EventArgs e)
         {
             frameAdiciona.IsVisible = true;
@@ -42,28 +41,23 @@ namespace fluxograma
 
         private void OnCancelClicked(object sender, EventArgs e)
         {
-            frameAdiciona = false;
+            frameAdiciona.IsVisible = false;
         }
 
         private void OnDeleteButtonClicked(object sender, EventArgs e)
         {
-            IsDeleteConfirmVisible = true;
-            OnPropertyChanged(nameof(IsDeleteConfirmVisible));
+           frameApagado.IsVisible = true;
         }
 
         private void OnDeleteConfirmClicked(object sender, EventArgs e)
         {
             // Delete item logic
-            IsDeleteSuccessVisible = true;
-            OnPropertyChanged(nameof(IsDeleteSuccessVisible));
-            IsDeleteConfirmVisible = false;
-            OnPropertyChanged(nameof(IsDeleteConfirmVisible));
+            frameApagado.IsVisible = true;
         }
 
         private void OnDeleteCancelClicked(object sender, EventArgs e)
         {
-            IsDeleteConfirmVisible = false;
-            OnPropertyChanged(nameof(IsDeleteConfirmVisible));
+            frameSucesso.IsVisible = true;
         }
 
         private void OnSuccessOkClicked(object sender, EventArgs e)
@@ -73,8 +67,7 @@ namespace fluxograma
 
         private void OnDeleteSuccessOkClicked(object sender, EventArgs e)
         {
-            IsDeleteSuccessVisible = false;
-            OnPropertyChanged(nameof(IsDeleteSuccessVisible));
+            frameApagar.IsVisible = true;
         }
 
         private void OnReplaceConfirmClicked(object sender, EventArgs e)
@@ -84,8 +77,7 @@ namespace fluxograma
 
         private void OnReplaceCancelClicked(object sender, EventArgs e)
         {
-            IsConfirmationVisible = false;
-            OnPropertyChanged(nameof(IsConfirmationVisible));
+           frameApagado.IsVisible = true;
         }
     
 

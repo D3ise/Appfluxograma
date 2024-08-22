@@ -30,5 +30,10 @@ namespace fluxograma
 
             // Exemplo de novo produto
         }
+
+        private void Volta(object sender, EventArgs e)
+        {
+            Application.Current.MainPage = new TelaInicial();
+        }
     }
 }
