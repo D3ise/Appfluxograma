@@ -25,7 +25,7 @@ public class MateriaControle : ControleBase
   public virtual List<Materia>? LerTodos()
   {
     var tabela = liteDB.GetCollection<Materia>(NomeDaTabela);
-    return new List<Materia>(tabela.FindAll().OrderBy(d => d.Nome));
+    return new List<Materia>(tabela.FindAll().OrderBy(d => d.Unidade));
   }
 
   //----------------------------------------------------------------------------

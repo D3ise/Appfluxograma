@@ -1,22 +1,26 @@
-using Microsoft.Maui.Controls;
+using Controles;
+using Modelos;
 
 namespace fluxograma
 {
     public partial class ProdutoPage : ContentPage
     {
+        public Produtos produto { get; set; }
+        Controles.ProdutosControle produtoControle = new Controles.ProdutosControle();
         public ProdutoPage()
         {
             InitializeComponent();
         }
 
         // Método para excluir um produto
-        private void OnDeleteButtonClicked(object sender, EventArgs e)
+       async void OnDeleteButtonClicked(object sender, EventArgs args)
         {
-            var button = sender as Button;
-            var grid = button.Parent as Grid;
-            var row = Grid.GetRow(button);
-
-            grid.RowDefinitions.RemoveAt(grid.RowDefinitions.Count - 1);
+            var resp = await DisplayAlert("APAGAR", "Certeza que deseja apagar este usuário?", "SIM", "NÃO");
+            if (resp)
+            {
+                produtoControle.Apagar(produto.Id);
+                Application.Current.MainPage = new ProdutoPage();
+            }
         }
 
         // Método para adicionar um novo produto

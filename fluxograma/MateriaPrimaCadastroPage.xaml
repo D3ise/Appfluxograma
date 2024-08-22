@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="fluxograma.MateriaPrimaCadastroPage"
+             Shell.NavBarIsVisible="False"
+             Title="Matéria-Prima">
+<ContentPage.Content>
+        <StackLayout Padding="10">
+            <!-- Header with a back arrow and title -->
+            <Grid>
+            <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+                <ImageButton Source="back.png"
+                             Grid.Row="0"
+                             Grid.Column="0"
+                             Clicked="Volta"
+                             WidthRequest="50"
+                             HeightRequest="50"
+                             HorizontalOptions="Start" />
+                <Label Text="CADASTRAR"
+                       Grid.Row="0"
+                       Grid.Column="1"
+                       FontSize="20"
+                       HorizontalOptions="Center" />
+                       </Grid>
+                       
+            <StackLayout>
+                <Label x:Name="LabelId" />
+                <Label Text="Nome:" />
+                <Entry x:Name="NomeEntry" />
+                <Label Text="Unidade:" />
+                <Entry x:Name="UnidadeEntry" />
+            </StackLayout>
+
+            <!-- Save button -->
+            <Grid>
+            <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+            <Button Text="SALVAR"
+                    Clicked="OnSaveButtonClicked"
+                    Grid.Row="0"
+                    TextColor="Black"
+                    Grid.Column="0"
+                    BackgroundColor="#D1A3DA"
+                    Margin="20" />
+
+            <Button Text="APAGAR"
+                    Clicked="OnDeleteButtonClicked"
+                    Grid.Row="0"
+                    TextColor="Black"
+                    Grid.Column="1"
+                    BackgroundColor="#D1A3DA"
+                    Margin="20" />
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

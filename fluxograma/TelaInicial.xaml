@@ -150,20 +150,6 @@
                     Grid.Row="3"
                    Grid.Column="1"/>
             </Grid>
-
-            <Button Text="+"
-                    FontSize="24"
-                    CornerRadius="30"
-                    BorderWidth="1"
-                    BorderColor="Black"
-                    WidthRequest="60"
-                    HeightRequest="60"
-                    HorizontalOptions="End"
-                    VerticalOptions="End"
-                    Margin="0,20,10,10"
-                    BackgroundColor="Pink"
-                    TextColor="Black">
-            </Button>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
