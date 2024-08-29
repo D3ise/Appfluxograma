@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="fluxograma.MateriaPrimaCadastroPage"
+             x:Class="fluxograma.ProdutoCadastroPage"
              Shell.NavBarIsVisible="False"
-             Title="Matéria-Prima">
+             Title="Produto">
 <ContentPage.Content>
         <StackLayout Padding="10">
 
@@ -33,8 +33,8 @@
                 <Label x:Name="LabelId" />
                 <Label Text="Nome:" />
                 <Entry x:Name="NomeEntry" />
-                <Label Text="Unidade:" />
-                <Entry x:Name="UnidadeEntry" />
+                <Label Text="Preço:" />
+                <Entry x:Name="ValorEntry" />
             </StackLayout>
 
             <Grid>
@@ -51,7 +51,7 @@
                     Grid.Row="0"
                     TextColor="Black"
                     Grid.Column="0"
-                    BackgroundColor="#D1A3DA"
+                    BackgroundColor="#98FB98"
                     Margin="20" />
 
             <Button Text="APAGAR"
@@ -59,7 +59,7 @@
                     Grid.Row="0"
                     TextColor="Black"
                     Grid.Column="1"
-                    BackgroundColor="#D1A3DA"
+                    BackgroundColor="#98FB98"
                     Margin="20" />
             </Grid>
         </StackLayout>

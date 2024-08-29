@@ -7,6 +7,7 @@ namespace Modelos
    {
    public string Nome {get; set;}
    public int Unidade {get; set;}
+   public int Valor {get; set;}
 
    [BsonId]
    public int Id {get; set;}

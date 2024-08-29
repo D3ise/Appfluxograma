@@ -6,7 +6,7 @@
              Title="Cadastro de Cliente">
      <ContentPage.Content>
         <StackLayout Padding="10">
-            <!-- Header with a back arrow and title -->
+
             <Grid>
             <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
@@ -29,13 +29,12 @@
                        HorizontalOptions="Center" />
                        </Grid>
 
-            <!-- Profile icon -->
             <Image Source="user.png"
                    WidthRequest="100"
                    HeightRequest="100"
                    HorizontalOptions="Center"
                    Margin="20" />
-            <!-- User input fields -->
+
             <StackLayout>
                 <Label x:Name="LabelId" />
                 <Label Text="Nome:" />
@@ -51,7 +50,7 @@
                 <Entry x:Name="EmailEntry"
                        Keyboard="Email" />
             </StackLayout>
-            <!-- Save button -->
+
             <Grid>
             <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
@@ -65,14 +64,20 @@
                     Clicked="OnSaveButtonClicked"
                     Grid.Row="0"
                     Grid.Column="0"
-                    Background="#6c00ff"
+                    BackgroundColor="#ADD8E6"
+                    TextColor="Black"
+                    BorderColor="Black"
+                    BorderWidth="1"
                     Margin="20" />
 
             <Button Text="APAGAR"
                     Clicked="OnDeleteButtonClicked"
                     Grid.Row="0"
                     Grid.Column="1"
-                    Background="#6c00ff"
+                    BackgroundColor="#ADD8E6"
+                    TextColor="Black"
+                    BorderColor="Black"
+                    BorderWidth="1"
                     Margin="20" />
             </Grid>
         </StackLayout>

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="fluxograma.ClientePage"
+             x:Class="fluxograma.TransportadoraPage"
              Shell.NavBarIsVisible="False"
-             Title="Clientes">
+             Title="Transportadoras">
      <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="40"/>
@@ -21,14 +21,14 @@
                      Grid.Column="0"
                      HorizontalOptions="Start"/>
 
-        <Label Text="CLIENTES"
+        <Label Text="TRANSPORTADORAS"
                Grid.Row="0"
                Grid.ColumnSpan="2"
                HorizontalOptions="Center"
                FontSize="20"/>
 
 
-        <SearchBar Placeholder="Nome do cliente"
+        <SearchBar Placeholder="Nome da Transportadora"
                    Grid.Row="1"
                    Grid.ColumnSpan="2"
                    HorizontalOptions="FillAndExpand"/>
@@ -36,7 +36,7 @@
                 Clicked="Criar"
                 Grid.Row="1"
                 Grid.Column="1"
-                BackgroundColor="#ADD8E6"
+                BackgroundColor="#FFFF99"
                 BorderColor="Black"
                 BorderWidth="1"
                 FontSize="22"
@@ -44,7 +44,7 @@
                 Padding="3"
                 TextColor="Black"/>
 
-        <ListView x:Name="ListaClientes"
+        <ListView x:Name="ListaTransportadora"
                   Grid.Row="2"
                   Grid.Column="0"
                   Grid.ColumnSpan="2"

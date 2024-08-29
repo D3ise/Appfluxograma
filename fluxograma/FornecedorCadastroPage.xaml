@@ -66,14 +66,20 @@
                     Clicked="OnSaveButtonClicked"
                     Grid.Row="0"
                     Grid.Column="0"
-                    Background="#6c00ff"
+                    BackgroundColor="#FFB6C1"
+                    TextColor="Black"
+                    BorderColor="Black"
+                    BorderWidth="1"
                     Margin="20" />
 
             <Button Text="APAGAR"
                     Clicked="OnDeleteButtonClicked"
                     Grid.Row="0"
                     Grid.Column="1"
-                    Background="#6c00ff"
+                    BackgroundColor="#FFB6C1"
+                    TextColor="Black"
+                    BorderColor="Black"
+                    BorderWidth="1"
                     Margin="20" />
             </Grid>
         </StackLayout>

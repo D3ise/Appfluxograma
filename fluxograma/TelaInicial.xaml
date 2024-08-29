@@ -63,6 +63,7 @@
                         Grid.Column="0"
                         BorderWidth="1"
                         BorderColor="Black"
+                        Clicked= "Transportadora"
                         BackgroundColor="#FFFF99"
                         TextColor="Black">
                 </Button>
@@ -140,6 +141,7 @@
                         Grid.Column="1"
                         BorderWidth="1"
                         BorderColor="Black"
+                        Clicked= "Funcionarios"
                         BackgroundColor="#D3D3D3"
                         TextColor="Black">
                 </Button>

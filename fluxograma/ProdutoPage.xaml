@@ -5,7 +5,8 @@
              Shell.NavBarIsVisible="False"
              Title="Produtos">
 
-    <StackLayout Padding="10">
+   <StackLayout Padding="5">
+
     <ImageButton Source="back.png"
                      WidthRequest="50"
                      HeightRequest="50"
@@ -14,89 +15,70 @@
                      Clicked="Volta"
                      HorizontalOptions="Start"/>
 
-        <!-- Título -->
-        <Label Text="PRODUTOS"
-               HorizontalOptions="Center"
-               FontSize="Medium"
-               VerticalTextAlignment="Center"
-               HorizontalTextAlignment="Center"
-               Margin="0,10"/>
+        <StackLayout Orientation="Horizontal"
+                Padding="0, 20, 0, 0">
+            <SearchBar Placeholder="Pesquisar..."
+                    HorizontalOptions="FillAndExpand"/>
+            <Button Text="+"
+                    BackgroundColor="#98FB98"
+                    BorderColor="Black"
+                    BorderWidth="1"
+                    Clicked="Criar"
+                    FontSize="22"
+                    TextColor="Black"/>
+        </StackLayout>
 
-        <!-- Tabela de Produtos -->
         <Grid>
-            <!-- Definindo as colunas -->
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="2*"/>
                 <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="2*"/>
-                <ColumnDefinition Width="40"/>
+                <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
 
-            <!-- Definindo as linhas -->
             <Grid.RowDefinitions>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="50"/>
-                <RowDefinition Height="50"/>
-                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
 
-            <!-- Cabeçalho -->
-            <Label Text="Produto"
-                   Grid.Row="0"
-                   Grid.Column="0"
-                   FontAttributes="Bold"/>
+            <Label Text="PRODUTO"
+                    BackgroundColor="#98FB98"
+                    Grid.Row="0"
+                    FontAttributes="Bold"
+                    HorizontalTextAlignment="Center"/>
+            <Label Text="PREÇO"
+                    BackgroundColor="#98FB98"
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    FontAttributes="Bold"
+                    HorizontalTextAlignment="Center"/>
+                    
 
-            <Label Text="Preço"
-                   Grid.Row="0"
-                   Grid.Column="1"
-                   FontAttributes="Bold"/>
+            <ListView x:Name="ListaProduto"
+                  Grid.Row="2"
+                  Grid.Column="0"
+                  Grid.ColumnSpan="2"
+                  HasUnevenRows="True"
+                  ItemSelected="QuandoSelecionarUmItem"
+                  HorizontalOptions="Fill"
+                  VerticalOptions="Fill">
+            <ListView.ItemTemplate >
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid Padding="0, 10">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
 
-            <Label Text="Matéria-Prima"
-                   Grid.Row="0"
-                   Grid.Column="2"
-                   FontAttributes="Bold"/>
+                            <Label Text="{Binding Nome}"/>
+                            <Label Text="{Binding Unidade}"
+                                    Grid.Column="1"/>
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
 
-            <!-- Linhas de Produtos (Placeholder) -->
-            <!-- Repita para cada produto -->
-            <Label Text="Produto 1"
-                    Grid.Row="1"
-                    Grid.Column="0"/>
-            <Label Text="R$ 10,00"
-                    Grid.Row="1"
-                    Grid.Column="1"/>
-            <Label Text="Matéria 1"
-                    Grid.Row="1"
-                    Grid.Column="2"/>
-            <ImageButton Source="delete.png"
-                    Grid.Row="1"
-                    Grid.Column="3"
-                    Clicked="OnDeleteButtonClicked"/>
-
-            <Label Text="Produto 2"
-                    Grid.Row="2"
-                    Grid.Column="0"/>
-            <Label Text="R$ 20,00"
-                    Grid.Row="2"
-                    Grid.Column="1"/>
-            <Label Text="Matéria 2"
-                    Grid.Row="2"
-                    Grid.Column="2"/>
-            <ImageButton Source="delete.png"
-                    Grid.Row="2"
-                    Grid.Column="3"
-                    Width="15"
-                    Height="15"
-                    Clicked="OnDeleteButtonClicked"/>
-
-            <!-- Adicione mais linhas conforme necessário -->
         </Grid>
-
-        <!-- Botão de adicionar produto -->
-        <Button Text="+"
-                HorizontalOptions="Start"
-                VerticalOptions="Start"
-                Clicked="OnAddProductButtonClicked"/>
 
     </StackLayout>
 </ContentPage>

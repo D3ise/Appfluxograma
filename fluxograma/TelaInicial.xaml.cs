@@ -28,5 +28,15 @@ namespace fluxograma
         {
             Application.Current.MainPage = new MateriaPrimaPage();
         }
+
+        private void Transportadora(object sender, EventArgs e)
+        {
+            Application.Current.MainPage = new TransportadoraPage();
+        }
+
+        private void Funcionarios(object sender, EventArgs e)
+        {
+            Application.Current.MainPage = new FuncionarioPage();
+        }
     }
 }

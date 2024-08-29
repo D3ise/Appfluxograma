@@ -17,18 +17,19 @@
                      Clicked="Volta"
                      HorizontalOptions="Start"/>
 
-        <!-- Search and Add Section -->
         <StackLayout Orientation="Horizontal"
                 Padding="0, 20, 0, 0">
             <SearchBar Placeholder="Pesquisar..."
                     HorizontalOptions="FillAndExpand"/>
             <Button Text="+"
                     BackgroundColor="#AB83A1"
+                    BorderColor="Black"
+                    BorderWidth="1"
                     Clicked="Criar"
-                    TextColor="White"/>
+                    FontSize="22"
+                    TextColor="Black"/>
         </StackLayout>
 
-        <!-- Table Section -->
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>

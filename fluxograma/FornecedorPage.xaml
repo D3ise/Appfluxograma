@@ -36,10 +36,14 @@
         <Button Text="+"
                 Grid.Row="1"
                 Grid.Column="1"
-                FontSize="25"
+                FontSize="22"
+                BorderColor="Black"
+                BorderWidth="1"
+                BackgroundColor="#FFB6C1"
                 Clicked="Criar"
                 HorizontalOptions="End"
-                Padding="3"/>
+                Padding="3"
+                TextColor="Black"/>
 
         <ListView x:Name="ListaClientes"
                   Grid.Row="2"
