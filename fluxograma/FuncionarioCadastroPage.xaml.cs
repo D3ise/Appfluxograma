@@ -21,6 +21,7 @@ namespace fluxograma
                 SobrenomeEntry.Text = funcionarios.Sobrenome;
                 TelefoneEntry.Text = funcionarios.Telefone;
                 CpfEntry.Text = funcionarios.Cpf;
+                CargoEntry.Text = funcionarios.Cargo;
                 EmailEntry.Text = funcionarios.Email;
                 LabelId.Text = funcionarios.Id.ToString();
 
@@ -38,6 +39,7 @@ namespace fluxograma
             funcionarios.Sobrenome = SobrenomeEntry.Text;
             funcionarios.Telefone  = TelefoneEntry.Text;
             funcionarios.Cpf     = CpfEntry.Text;
+            funcionarios.Cargo     = CargoEntry.Text;
             funcionarios.Email     = EmailEntry.Text;
 
             funcionariosControle.CriarOuAtualizar(funcionarios);
@@ -71,6 +73,11 @@ namespace fluxograma
             else if (String.IsNullOrEmpty(CpfEntry.Text))
             {
                 await DisplayAlert("Cadastrar", "O campo CPF é obrigatório", "OK");
+                return false;
+            }
+            else if (String.IsNullOrEmpty(CargoEntry.Text))
+            {
+                await DisplayAlert("Cadastrar", "O campo Cargo é obrigatório", "OK");
                 return false;
             }
             else

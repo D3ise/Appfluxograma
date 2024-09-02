@@ -29,12 +29,6 @@
                        HorizontalOptions="Center" />
                        </Grid>
 
-            <Image Source="user.png"
-                   WidthRequest="100"
-                   HeightRequest="100"
-                   HorizontalOptions="Center"
-                   Margin="20" />
-
             <StackLayout>
                 <Label x:Name="LabelId" />
                 <Label Text="Nome:" />

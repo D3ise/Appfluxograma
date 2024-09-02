@@ -30,6 +30,7 @@ namespace fluxograma
 
         async void OnSaveButtonClicked(object sender, EventArgs args)
         {
+             if (await VerificaDados())
          {
                 var materia = new Modelos.Materia();
 
@@ -54,7 +55,7 @@ namespace fluxograma
             }
             else if (String.IsNullOrEmpty(UnidadeEntry.Text))
             {
-                await DisplayAlert("Cadastrar", "O campo Sobrenome é obrigatório", "OK");
+                await DisplayAlert("Cadastrar", "O campo Unidade é obrigatório", "OK");
                 return false;
             }
             

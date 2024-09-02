@@ -49,6 +49,8 @@
                 <Label Text="Email:" />
                 <Entry x:Name="EmailEntry"
                        Keyboard="Email" />
+                <Label Text="Cargo:" />
+                <Entry x:Name="CargoEntry" />
             </StackLayout>
 
             <Grid>
