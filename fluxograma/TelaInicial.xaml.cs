@@ -38,5 +38,10 @@ namespace fluxograma
         {
             Application.Current.MainPage = new FuncionarioPage();
         }
+
+        private void Estoque(object sender, EventArgs e)
+        {
+            Application.Current.MainPage = new EstoquePage();
+        }
     }
 }

@@ -126,6 +126,7 @@
                         Grid.Column="0"
                         BorderWidth="1"
                         BorderColor="Black"
+                        Clicked= "Estoque"
                         BackgroundColor="#96D1C1"
                         TextColor="Black">
                 </Button>

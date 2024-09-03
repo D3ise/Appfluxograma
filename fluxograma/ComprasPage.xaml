@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="fluxograma.ComprasPage">
+
+    <ContentPage.Content>
+        <Grid Padding="10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <!-- Top Bar with Back Button and Title -->
+            <StackLayout Orientation="Horizontal" Grid.Row="0">
+                <ImageButton Source="back.png"
+                             Clicked="Volta"
+                             WidthRequest="50"
+                             HeightRequest="50"
+                             HorizontalOptions="Start" />
+                <Label Text="COMPRAS" FontSize="20" HorizontalOptions="CenterAndExpand" VerticalOptions="Center" />
+            </StackLayout>
+
+            <!-- Search Bar and Add Button -->
+            <StackLayout Orientation="Horizontal" Grid.Row="1" Spacing="10" VerticalOptions="Center" Margin="0,10,0,0">
+                <Entry Placeholder="Pesquisar" HorizontalOptions="FillAndExpand" />
+                <Button Text="+" FontSize="Large" />
+            </StackLayout>
+
+            <!-- Data Grid -->
+            <CollectionView Grid.Row="2" ItemsSource="{Binding Compras}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Padding="5" ColumnSpacing="10">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="2*" />
+                                <ColumnDefinition Width="2*" />
+                                <ColumnDefinition Width="2*" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+
+                            <Label Text="{Binding MateriaPrima}" Grid.Column="0" VerticalOptions="Center" />
+                            <Label Text="{Binding Quantidade}" Grid.Column="1" VerticalOptions="Center" />
+                            <Label Text="{Binding Fornecedor}" Grid.Column="2" VerticalOptions="Center" />
+                            <Button Text="&#x1F5D1;" Grid.Column="3" FontSize="Medium" Command="{Binding DeleteCommand}" />
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
+

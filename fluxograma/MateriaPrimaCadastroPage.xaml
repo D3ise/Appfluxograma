@@ -34,7 +34,8 @@
                 <Label Text="Nome:" />
                 <Entry x:Name="NomeEntry" />
                 <Label Text="Unidade:" />
-                <Entry x:Name="UnidadeEntry" />
+                <Picker x:Name="pickerUnidade"
+                    ItemDisplayBinding="{Binding Nome}" />
             </StackLayout>
 
             <Grid>

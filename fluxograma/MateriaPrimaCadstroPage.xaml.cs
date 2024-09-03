@@ -8,10 +8,12 @@ namespace fluxograma
     {
         public Materia materia { get; set; }
         Controles.MateriaControle materiaControle = new Controles.MateriaControle();
+        Controles.UnidadeControle unidadeControle = new Controles.UnidadeControle();
 
         public MateriaPrimaCadastroPage()
         {
             InitializeComponent();
+            pickerUnidade.ItemsSource = unidadeControle.LerTodos();
         }
 
                 protected override void OnAppearing()
@@ -21,7 +23,7 @@ namespace fluxograma
             {
                 NomeEntry.Text = materia.Nome;
                 //ValorEntry.Text = materia.Valor;
-                UnidadeEntry.Text = materia.Unidade;
+                pickerUnidade.SelectedItem = materia.Unidade;
                 LabelId.Text = materia.Id.ToString();
                 
 
@@ -37,7 +39,7 @@ namespace fluxograma
                 materia.Id = 0;
                 materia.Nome = NomeEntry.Text;
                 //materia.Valor = ValorEntry.Text;
-                materia.Unidade = UnidadeEntry.Text;
+                materia.Unidade    = pickerUnidade.SelectedItem as Unidade;
 
                 materiaControle.CriarOuAtualizar(materia);
 
@@ -51,11 +53,6 @@ namespace fluxograma
             if (String.IsNullOrEmpty(NomeEntry.Text))
             {
                 await DisplayAlert("Cadastrar", "O campo Nome é obrigatório", "OK");
-                return false;
-            }
-            else if (String.IsNullOrEmpty(UnidadeEntry.Text))
-            {
-                await DisplayAlert("Cadastrar", "O campo Unidade é obrigatório", "OK");
                 return false;
             }
             
