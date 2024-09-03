@@ -68,11 +68,14 @@ namespace fluxograma
         }
         async void OnDeleteButtonClicked(object sender, EventArgs args)
         {
+             if (produto != null)
+            {
             var resp = await DisplayAlert("APAGAR", "Certeza que deseja apagar este usuário?", "SIM", "NÃO");
             if (resp)
             {
                 produtoControle.Apagar(produto.Id);
                 Application.Current.MainPage = new ProdutoPage();
+            }
             }
         }
     }

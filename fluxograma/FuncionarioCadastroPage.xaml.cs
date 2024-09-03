@@ -89,11 +89,14 @@ namespace fluxograma
         }
         async void OnDeleteButtonClicked(object sender, EventArgs args)
         {
+             if (funcionarios != null)
+            {
             var resp = await DisplayAlert("APAGAR", "Certeza que deseja apagar este usuário?", "SIM", "NÃO");
             if (resp)
             {
                 funcionariosControle.Apagar(funcionarios.Id);
                 Application.Current.MainPage = new FuncionarioPage();
+            }
             }
         }
     }

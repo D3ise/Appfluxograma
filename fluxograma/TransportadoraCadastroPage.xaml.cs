@@ -68,11 +68,14 @@ namespace fluxograma
         }
         async void OnDeleteButtonClicked(object sender, EventArgs args)
         {
+             if (transportadora != null)
+            {
             var resp = await DisplayAlert("APAGAR", "Certeza que deseja apagar este usuário?", "SIM", "NÃO");
             if (resp)
             {
                 transportadoraControle.Apagar(transportadora.Id);
                 Application.Current.MainPage = new TransportadoraPage();
+            }
             }
         }
     }
