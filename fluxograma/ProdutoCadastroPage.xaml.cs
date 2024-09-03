@@ -72,7 +72,7 @@ namespace fluxograma
             if (resp)
             {
                 produtoControle.Apagar(produto.Id);
-                Application.Current.MainPage = new MateriaPrimaPage();
+                Application.Current.MainPage = new ProdutoPage();
             }
         }
     }
