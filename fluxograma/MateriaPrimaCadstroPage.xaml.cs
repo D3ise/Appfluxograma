@@ -16,7 +16,7 @@ namespace fluxograma
             pickerUnidade.ItemsSource = unidadeControle.LerTodos();
         }
 
-                protected override void OnAppearing()
+        protected override void OnAppearing()
         {
             base.OnAppearing();
             if (materia != null)

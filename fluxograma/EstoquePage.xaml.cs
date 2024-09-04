@@ -18,5 +18,14 @@ namespace fluxograma
         {
             Application.Current.MainPage = new ComprasPage();
         }
+
+        private void Envios(object sender, EventArgs e)
+        {
+            Application.Current.MainPage = new EnviosPage();
+        }
+         private void Estoque(object sender, EventArgs e)
+        {
+            Application.Current.MainPage = new EstoquesPage();
+        }
     }
 }

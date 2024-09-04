@@ -3,22 +3,22 @@ using Modelos;
 
 namespace fluxograma
 {
-    public partial class ComprasPage : ContentPage
+    public partial class EstoquesPage : ContentPage
     {
 
-        public Compras compras { get; set; }
-        Controles.ComprasControle comprasControle = new Controles.ComprasControle();
+        public Estoque estoque { get; set; }
+        Controles.EstoqueControle estoqueControle = new Controles.EstoqueControle();
 
-        public ComprasPage()
+        public EstoquesPage()
         {
             InitializeComponent(); 
-            ListaCompra.ItemsSource = comprasControle.LerTodos(); 
+            ListaEstoque.ItemsSource = estoqueControle.LerTodos(); 
         }
 
         void QuandoSelecionarUmItem(object sender, SelectedItemChangedEventArgs e)
         {
-            var page = new CompraCadastroPage();
-            page.compras = e.SelectedItem as Compras;
+            var page = new EstoquesCadastroPage();
+            page.estoque = e.SelectedItem as Estoque;
             Application.Current.MainPage = page;
         }
 
@@ -29,7 +29,7 @@ namespace fluxograma
 
          private void Criar(object sender, EventArgs e)
         {
-            Application.Current.MainPage = new CompraCadastroPage();
+            Application.Current.MainPage = new EstoquesCadastroPage();
         }
        
     }

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="fluxograma.ComprasPage"
+             x:Class="fluxograma.EnviosPage"
              Shell.NavBarIsVisible="False"
-             Title="Compras">
+             Title="Envios">
 
              
 
@@ -25,7 +25,7 @@
                              WidthRequest="50"
                              HeightRequest="50"
                              HorizontalOptions="Start" />
-                <Label Text="COMPRAS"
+                <Label Text="ENVIOS"
                        Grid.Row="0"
                        Grid.Column="1"
                        FontSize="20"
@@ -75,7 +75,7 @@
                     FontAttributes="Bold"
                     HorizontalTextAlignment="Center"/>
 
-            <ListView x:Name="ListaCompra"
+            <ListView x:Name="ListaEnvios"
                   Grid.Row="2"
                   Grid.Column="0"
                   Grid.ColumnSpan="3"

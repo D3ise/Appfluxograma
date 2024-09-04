@@ -127,7 +127,7 @@
                         BorderWidth="1"
                         BorderColor="Black"
                         Clicked= "Estoque"
-                        BackgroundColor="#96D1C1"
+                        BackgroundColor="#B2EBF2"
                         TextColor="Black">
                 </Button>
                 <Image Source= "estoque.png"
